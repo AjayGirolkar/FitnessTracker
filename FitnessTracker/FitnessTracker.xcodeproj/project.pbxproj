@@ -60,14 +60,86 @@
 			children = (
 				AB5B7472285D8272001F7DBD /* AppDelegate.swift */,
 				AB5B7474285D8272001F7DBD /* SceneDelegate.swift */,
-				AB5B7476285D8272001F7DBD /* ViewController.swift */,
-				AB5B7478285D8272001F7DBD /* Main.storyboard */,
-				AB5B747E285D8274001F7DBD /* Assets.xcassets */,
-				AB5B7480285D8274001F7DBD /* LaunchScreen.storyboard */,
-				AB5B7483285D8274001F7DBD /* Info.plist */,
-				AB5B747B285D8272001F7DBD /* FitnessTracker.xcdatamodeld */,
+				AB5B748A285D8315001F7DBD /* MVVM */,
+				AB5B7489285D830D001F7DBD /* DatabaseManager */,
+				AB5B7491285D8426001F7DBD /* Resources */,
 			);
 			path = FitnessTracker;
+			sourceTree = "<group>";
+		};
+		AB5B7489285D830D001F7DBD /* DatabaseManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DatabaseManager;
+			sourceTree = "<group>";
+		};
+		AB5B748A285D8315001F7DBD /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				AB5B748B285D832A001F7DBD /* Model */,
+				AB5B748C285D836C001F7DBD /* View */,
+				AB5B748D285D8373001F7DBD /* ViewModel */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		AB5B748B285D832A001F7DBD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB5B748C285D836C001F7DBD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB5B748E285D838B001F7DBD /* ViewController */,
+				AB5B748F285D83C6001F7DBD /* Storyboards */,
+				AB5B7490285D83F6001F7DBD /* TableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB5B748D285D8373001F7DBD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AB5B748E285D838B001F7DBD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AB5B7476285D8272001F7DBD /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AB5B748F285D83C6001F7DBD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AB5B7478285D8272001F7DBD /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		AB5B7490285D83F6001F7DBD /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		AB5B7491285D8426001F7DBD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AB5B747E285D8274001F7DBD /* Assets.xcassets */,
+				AB5B7483285D8274001F7DBD /* Info.plist */,
+				AB5B7480285D8274001F7DBD /* LaunchScreen.storyboard */,
+				AB5B747B285D8272001F7DBD /* FitnessTracker.xcdatamodeld */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +365,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B7N28739PP;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FitnessTracker/Info.plist;
+				INFOPLIST_FILE = FitnessTracker/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -321,7 +393,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B7N28739PP;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FitnessTracker/Info.plist;
+				INFOPLIST_FILE = FitnessTracker/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

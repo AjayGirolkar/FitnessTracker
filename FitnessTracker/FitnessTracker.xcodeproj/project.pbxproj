@@ -14,6 +14,9 @@
 		AB5B747D285D8272001F7DBD /* FitnessTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB5B747B285D8272001F7DBD /* FitnessTracker.xcdatamodeld */; };
 		AB5B747F285D8274001F7DBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB5B747E285D8274001F7DBD /* Assets.xcassets */; };
 		AB5B7482285D8274001F7DBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB5B7480285D8274001F7DBD /* LaunchScreen.storyboard */; };
+		AB5F8FF0285D86CB009C4D43 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5F8FEF285D86CB009C4D43 /* DatabaseManager.swift */; };
+		AB5F8FF2285D8753009C4D43 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5F8FF1285D8753009C4D43 /* LoginViewController.swift */; };
+		ABEDCB402869593D001DACE8 /* FitnessTracker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABEDCB3F2869593D001DACE8 /* FitnessTracker.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		AB5B747E285D8274001F7DBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB5B7481285D8274001F7DBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB5B7483285D8274001F7DBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB5F8FEF285D86CB009C4D43 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		AB5F8FF1285D8753009C4D43 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ABEDCB3F2869593D001DACE8 /* FitnessTracker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FitnessTracker.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 		AB5B7489285D830D001F7DBD /* DatabaseManager */ = {
 			isa = PBXGroup;
 			children = (
+				AB5F8FEF285D86CB009C4D43 /* DatabaseManager.swift */,
 			);
 			path = DatabaseManager;
 			sourceTree = "<group>";
@@ -112,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				AB5B7476285D8272001F7DBD /* ViewController.swift */,
+				AB5F8FF1285D8753009C4D43 /* LoginViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -120,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				AB5B7478285D8272001F7DBD /* Main.storyboard */,
+				ABEDCB3F2869593D001DACE8 /* FitnessTracker.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -200,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABEDCB402869593D001DACE8 /* FitnessTracker.storyboard in Resources */,
 				AB5B7482285D8274001F7DBD /* LaunchScreen.storyboard in Resources */,
 				AB5B747F285D8274001F7DBD /* Assets.xcassets in Resources */,
 				AB5B747A285D8272001F7DBD /* Main.storyboard in Resources */,
@@ -213,8 +223,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB5F8FF2285D8753009C4D43 /* LoginViewController.swift in Sources */,
 				AB5B7477285D8272001F7DBD /* ViewController.swift in Sources */,
 				AB5B7473285D8272001F7DBD /* AppDelegate.swift in Sources */,
+				AB5F8FF0285D86CB009C4D43 /* DatabaseManager.swift in Sources */,
 				AB5B7475285D8272001F7DBD /* SceneDelegate.swift in Sources */,
 				AB5B747D285D8272001F7DBD /* FitnessTracker.xcdatamodeld in Sources */,
 			);

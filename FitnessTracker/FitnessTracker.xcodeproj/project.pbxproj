@@ -17,6 +17,7 @@
 		AB5F8FF0285D86CB009C4D43 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5F8FEF285D86CB009C4D43 /* DatabaseManager.swift */; };
 		AB5F8FF2285D8753009C4D43 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5F8FF1285D8753009C4D43 /* LoginViewController.swift */; };
 		ABEDCB402869593D001DACE8 /* FitnessTracker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABEDCB3F2869593D001DACE8 /* FitnessTracker.storyboard */; };
+		ABEDCB4328695D0C001DACE8 /* MyUserList.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEDCB4228695D0C001DACE8 /* MyUserList.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		AB5F8FEF285D86CB009C4D43 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		AB5F8FF1285D8753009C4D43 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ABEDCB3F2869593D001DACE8 /* FitnessTracker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FitnessTracker.storyboard; sourceTree = "<group>"; };
+		ABEDCB4228695D0C001DACE8 /* MyUserList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyUserList.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		AB5B748C285D836C001F7DBD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ABEDCB4128695CF4001DACE8 /* Xib */,
 				AB5B748E285D838B001F7DBD /* ViewController */,
 				AB5B748F285D83C6001F7DBD /* Storyboards */,
 				AB5B7490285D83F6001F7DBD /* TableViewCell */,
@@ -149,6 +152,14 @@
 				AB5B747B285D8272001F7DBD /* FitnessTracker.xcdatamodeld */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		ABEDCB4128695CF4001DACE8 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				ABEDCB4228695D0C001DACE8 /* MyUserList.xib */,
+			);
+			path = Xib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABEDCB4328695D0C001DACE8 /* MyUserList.xib in Resources */,
 				ABEDCB402869593D001DACE8 /* FitnessTracker.storyboard in Resources */,
 				AB5B7482285D8274001F7DBD /* LaunchScreen.storyboard in Resources */,
 				AB5B747F285D8274001F7DBD /* Assets.xcassets in Resources */,

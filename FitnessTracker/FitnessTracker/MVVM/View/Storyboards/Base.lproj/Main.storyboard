@@ -23,20 +23,20 @@
                                     <constraint firstAttribute="height" constant="218" id="saE-HF-w6b"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sing In / Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJ5-sz-iRI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In / Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJ5-sz-iRI">
                                 <rect key="frame" x="57" y="337" width="300" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDd-7K-Ynl">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDd-7K-Ynl" userLabel="usernameView">
                                 <rect key="frame" x="57" y="403" width="300" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BzR-Sx-1Yq">
                                         <rect key="frame" x="33" y="2" width="262" height="36"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QVf-XJ-Tpb">
                                         <rect key="frame" x="10" y="6.5" width="18" height="27"/>
@@ -59,14 +59,14 @@
                                     <constraint firstItem="QVf-XJ-Tpb" firstAttribute="leading" secondItem="dDd-7K-Ynl" secondAttribute="leading" constant="10" id="heY-Jg-VwT"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C6a-BR-8TL">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C6a-BR-8TL" userLabel="passwordView">
                                 <rect key="frame" x="57" y="464" width="300" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z6G-0e-1Yy">
                                         <rect key="frame" x="33" y="2" width="262" height="36"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="w0x-1F-mcE">
                                         <rect key="frame" x="10" y="5.5" width="18" height="28.5"/>
@@ -96,11 +96,22 @@
                                     <constraint firstAttribute="height" constant="50" id="M48-Ve-p2m"/>
                                     <constraint firstAttribute="width" constant="300" id="Pad-u2-tAg"/>
                                 </constraints>
-                                <color key="tintColor" systemColor="systemCyanColor"/>
+                                <color key="tintColor" red="0.096174596663024123" green="0.80138119461575197" blue="0.88150376081466675" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign In" cornerStyle="capsule">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.21698119900000001" green="0.73072988989999998" blue="0.88150376080000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ER-yL-wBJ">
+                                <rect key="frame" x="57" y="645" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Jc0-Ux-Si5"/>
+                                    <constraint firstAttribute="width" constant="300" id="ZcE-OO-kEc"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGray2Color"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Forget your password?"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g2z-Hw-QQu"/>
@@ -117,7 +128,9 @@
                             <constraint firstItem="dDd-7K-Ynl" firstAttribute="leading" secondItem="y6d-vq-ZM9" secondAttribute="leading" id="PEu-fV-W9m"/>
                             <constraint firstItem="ILw-au-LHJ" firstAttribute="centerX" secondItem="nv0-wd-mvC" secondAttribute="centerX" id="Z0z-yR-frE"/>
                             <constraint firstItem="dDd-7K-Ynl" firstAttribute="top" secondItem="vJ5-sz-iRI" secondAttribute="bottom" constant="20" id="dyx-lo-wHw"/>
+                            <constraint firstItem="4ER-yL-wBJ" firstAttribute="centerX" secondItem="nv0-wd-mvC" secondAttribute="centerX" id="fdc-EZ-eAM"/>
                             <constraint firstItem="y6d-vq-ZM9" firstAttribute="top" secondItem="g2z-Hw-QQu" secondAttribute="top" id="fdw-O5-fdL"/>
+                            <constraint firstItem="4ER-yL-wBJ" firstAttribute="top" secondItem="ILw-au-LHJ" secondAttribute="bottom" constant="25" id="jWD-ki-vMJ"/>
                             <constraint firstItem="dDd-7K-Ynl" firstAttribute="trailing" secondItem="y6d-vq-ZM9" secondAttribute="trailing" id="k5p-83-UZx"/>
                         </constraints>
                     </view>
@@ -152,9 +165,6 @@
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

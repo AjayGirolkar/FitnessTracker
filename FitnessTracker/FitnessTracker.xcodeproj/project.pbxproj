@@ -18,6 +18,7 @@
 		AB5F8FF2285D8753009C4D43 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5F8FF1285D8753009C4D43 /* LoginViewController.swift */; };
 		ABEDCB402869593D001DACE8 /* FitnessTracker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABEDCB3F2869593D001DACE8 /* FitnessTracker.storyboard */; };
 		ABEDCB4328695D0C001DACE8 /* MyUserList.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEDCB4228695D0C001DACE8 /* MyUserList.xib */; };
+		ABEDCBB2286AA987001DACE8 /* ViewWithBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDCBB1286AA987001DACE8 /* ViewWithBorder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		AB5F8FF1285D8753009C4D43 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ABEDCB3F2869593D001DACE8 /* FitnessTracker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FitnessTracker.storyboard; sourceTree = "<group>"; };
 		ABEDCB4228695D0C001DACE8 /* MyUserList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyUserList.xib; sourceTree = "<group>"; };
+		ABEDCBB1286AA987001DACE8 /* ViewWithBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithBorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		AB5B748C285D836C001F7DBD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ABEDCBB0286AA973001DACE8 /* Extension */,
 				ABEDCB4128695CF4001DACE8 /* Xib */,
 				AB5B748E285D838B001F7DBD /* ViewController */,
 				AB5B748F285D83C6001F7DBD /* Storyboards */,
@@ -160,6 +163,14 @@
 				ABEDCB4228695D0C001DACE8 /* MyUserList.xib */,
 			);
 			path = Xib;
+			sourceTree = "<group>";
+		};
+		ABEDCBB0286AA973001DACE8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ABEDCBB1286AA987001DACE8 /* ViewWithBorder.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABEDCBB2286AA987001DACE8 /* ViewWithBorder.swift in Sources */,
 				AB5F8FF2285D8753009C4D43 /* LoginViewController.swift in Sources */,
 				AB5B7477285D8272001F7DBD /* ViewController.swift in Sources */,
 				AB5B7473285D8272001F7DBD /* AppDelegate.swift in Sources */,

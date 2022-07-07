@@ -26,15 +26,16 @@ class LoginViewController: UIViewController {
         } else {
             errorLabel.isHidden = false
         }
-        return false
+        return true
     }
     
     @IBAction func singInAsUserAction(_ sender: Any) {
         if authenticateUser() {
             let userStoryBoard: UIStoryboard = UIStoryboard(name: "User", bundle: nil)
             let newViewController = userStoryBoard.instantiateViewController(withIdentifier: "UserLandingVC") as! UserLandingVC
-            newViewController.modalPresentationStyle = .fullScreen
-            self.present(newViewController, animated: true, completion: nil)
+            let navViewController = UINavigationController(rootViewController: newViewController)
+            navViewController.modalPresentationStyle = .fullScreen
+            self.present(navViewController, animated: true, completion: nil)
         }
     }
     
@@ -42,8 +43,9 @@ class LoginViewController: UIViewController {
         if authenticateUser() {
             let trainerStoryBoard: UIStoryboard = UIStoryboard(name: "Trainer", bundle: nil)
             let newViewController = trainerStoryBoard.instantiateViewController(withIdentifier: "TrainerLandingVC") as! TrainerLandingVC
-            newViewController.modalPresentationStyle = .fullScreen
-            self.present(newViewController, animated: true, completion: nil)
+            let navViewController = UINavigationController(rootViewController: newViewController)
+            navViewController.modalPresentationStyle = .fullScreen
+            self.present(navViewController, animated: true, completion: nil)
         }
     }
 }

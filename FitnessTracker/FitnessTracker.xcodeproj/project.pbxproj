@@ -20,6 +20,7 @@
 		AB84D10A286D593F00D2A68A /* Trainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB84D109286D593F00D2A68A /* Trainer.storyboard */; };
 		AB84D10E286D5A8200D2A68A /* UserLandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84D10D286D5A8200D2A68A /* UserLandingVC.swift */; };
 		AB84D110286D5A9000D2A68A /* TrainerLandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84D10F286D5A9000D2A68A /* TrainerLandingVC.swift */; };
+		AB84D112286EBAA400D2A68A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84D111286EBAA400D2A68A /* SignUpViewController.swift */; };
 		ABEDCB4328695D0C001DACE8 /* MyUserList.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEDCB4228695D0C001DACE8 /* MyUserList.xib */; };
 		ABEDCBB2286AA987001DACE8 /* ViewWithBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDCBB1286AA987001DACE8 /* ViewWithBorder.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		AB84D109286D593F00D2A68A /* Trainer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trainer.storyboard; sourceTree = "<group>"; };
 		AB84D10D286D5A8200D2A68A /* UserLandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLandingVC.swift; sourceTree = "<group>"; };
 		AB84D10F286D5A9000D2A68A /* TrainerLandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerLandingVC.swift; sourceTree = "<group>"; };
+		AB84D111286EBAA400D2A68A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		ABEDCB4228695D0C001DACE8 /* MyUserList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyUserList.xib; sourceTree = "<group>"; };
 		ABEDCBB1286AA987001DACE8 /* ViewWithBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithBorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +134,7 @@
 			children = (
 				AB5B7476285D8272001F7DBD /* ViewController.swift */,
 				AB5F8FF1285D8753009C4D43 /* LoginViewController.swift */,
+				AB84D111286EBAA400D2A68A /* SignUpViewController.swift */,
 				AB84D10C286D59B800D2A68A /* Trainer */,
 				AB84D10B286D59A800D2A68A /* User */,
 			);
@@ -276,6 +279,7 @@
 				AB5F8FF2285D8753009C4D43 /* LoginViewController.swift in Sources */,
 				AB5B7477285D8272001F7DBD /* ViewController.swift in Sources */,
 				AB84D10E286D5A8200D2A68A /* UserLandingVC.swift in Sources */,
+				AB84D112286EBAA400D2A68A /* SignUpViewController.swift in Sources */,
 				AB5B7473285D8272001F7DBD /* AppDelegate.swift in Sources */,
 				AB5F8FF0285D86CB009C4D43 /* DatabaseManager.swift in Sources */,
 				AB5B7475285D8272001F7DBD /* SceneDelegate.swift in Sources */,

@@ -233,7 +233,7 @@
                     <navigationItem key="navigationItem" id="cwL-Sm-NVs"/>
                     <connections>
                         <outlet property="errorLabel" destination="ueF-3X-ULq" id="9Yn-Qr-Ah0"/>
-                        <outlet property="passwordTextField" destination="Z6G-0e-1Yy" id="hyy-Oj-qEj"/>
+                        <outlet property="passwordTextField" destination="Z6G-0e-1Yy" id="NZI-pa-tX4"/>
                         <outlet property="usernameTextField" destination="BzR-Sx-1Yq" id="gC7-UK-CEx"/>
                     </connections>
                 </viewController>
@@ -241,10 +241,11 @@
             </objects>
             <point key="canvasLocation" x="605.79710144927537" y="-512.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="B6S-oH-j3e">
             <objects>
-                <viewController id="n28-CY-GyM" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IG9-Ue-cWn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="SignUpViewController" id="n28-CY-GyM" customClass="SignUpViewController" customModule="FitnessTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zpl-DR-NhC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -453,7 +454,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LCE-9E-sRX">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5r-Ff-73L">
                                                 <rect key="frame" x="0.0" y="236" width="374" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
@@ -497,8 +498,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UB9-6d-Lg7"/>
+                    <connections>
+                        <outlet property="enterUsername" destination="jHv-ZR-Ckg" id="TLF-7s-Lgc"/>
+                        <outlet property="usernameConfirmPassword" destination="Vev-kC-dhm" id="IBP-7D-OSc"/>
+                        <outlet property="usernameEmail" destination="FPf-je-mSi" id="EEQ-xt-fWL"/>
+                        <outlet property="usernamePassword" destination="dMJ-vh-wey" id="HAT-aQ-Bk2"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IG9-Ue-cWn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1408.6956521739132" y="-513.61607142857144"/>
         </scene>

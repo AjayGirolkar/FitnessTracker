@@ -11,46 +11,39 @@ class LoginViewController: UIViewController {
     
     
     @IBOutlet weak var usernameTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var errorLabel: UILabel!
-    
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
-
+    func authenticateUser() -> Bool {
+        if (usernameTextField.text?.lowercased() == "shrey") && (passwordTextField.text == "12345") {
+            errorLabel.isHidden = true
+            return true
+        } else {
+            errorLabel.isHidden = false
+        }
+        return false
+    }
+    
     @IBAction func singInAsUserAction(_ sender: Any) {
-        
-        let userStoryBoard: UIStoryboard = UIStoryboard(name: "User", bundle: nil)
-        let newViewController = userStoryBoard.instantiateViewController(withIdentifier: "UserLandingVC") as! UserLandingVC
-        newViewController.modalPresentationStyle = .fullScreen
-        self.present(newViewController, animated: true, completion: nil)
+        if authenticateUser() {
+            let userStoryBoard: UIStoryboard = UIStoryboard(name: "User", bundle: nil)
+            let newViewController = userStoryBoard.instantiateViewController(withIdentifier: "UserLandingVC") as! UserLandingVC
+            newViewController.modalPresentationStyle = .fullScreen
+            self.present(newViewController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func singInAsTrainerAction(_ sender: Any) {
-        
-        let trainerStoryBoard: UIStoryboard = UIStoryboard(name: "Trainer", bundle: nil)
-        let newViewController = trainerStoryBoard.instantiateViewController(withIdentifier: "TrainerLandingVC") as! TrainerLandingVC
-        newViewController.modalPresentationStyle = .fullScreen
-        self.present(newViewController, animated: true, completion: nil)
+        if authenticateUser() {
+            let trainerStoryBoard: UIStoryboard = UIStoryboard(name: "Trainer", bundle: nil)
+            let newViewController = trainerStoryBoard.instantiateViewController(withIdentifier: "TrainerLandingVC") as! TrainerLandingVC
+            newViewController.modalPresentationStyle = .fullScreen
+            self.present(newViewController, animated: true, completion: nil)
+        }
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

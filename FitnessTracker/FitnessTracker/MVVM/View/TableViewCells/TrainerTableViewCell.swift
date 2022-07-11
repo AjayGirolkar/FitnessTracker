@@ -2,13 +2,14 @@
 //  TrainerTableViewCell.swift
 //  FitnessTracker
 //
-//  Created by Ajay Girolkar on 07/07/22.
+//  Created by Ajay Girolkar on 10/07/22.
 //
 
 import UIKit
 
 class TrainerTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var trainerLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,5 +20,5 @@ class TrainerTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

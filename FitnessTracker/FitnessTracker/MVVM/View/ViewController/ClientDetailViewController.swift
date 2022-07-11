@@ -9,21 +9,21 @@ import UIKit
 
 class ClientDetailViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    var clientModel: ClientModel
+       
+    required init?(coder: NSCoder, clientModel: ClientModel) {
+        self.clientModel = clientModel
+        super.init(coder: coder)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    */
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = clientModel.name
+    }
 }
+
+

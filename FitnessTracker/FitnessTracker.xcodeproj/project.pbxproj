@@ -26,6 +26,7 @@
 		ABFDD422287AE55300407570 /* TrainerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDD420287AE55300407570 /* TrainerTableViewCell.swift */; };
 		ABFDD423287AE55300407570 /* TrainerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABFDD421287AE55300407570 /* TrainerTableViewCell.xib */; };
 		ABFDD425287BD45E00407570 /* ClientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDD424287BD45E00407570 /* ClientDetailViewController.swift */; };
+		ABFDD427287BD9E500407570 /* ClientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDD426287BD9E500407570 /* ClientModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		ABFDD420287AE55300407570 /* TrainerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerTableViewCell.swift; sourceTree = "<group>"; };
 		ABFDD421287AE55300407570 /* TrainerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainerTableViewCell.xib; sourceTree = "<group>"; };
 		ABFDD424287BD45E00407570 /* ClientDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDetailViewController.swift; sourceTree = "<group>"; };
+		ABFDD426287BD9E500407570 /* ClientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		AB5B748B285D832A001F7DBD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ABFDD426287BD9E500407570 /* ClientModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				AB5F8FF0285D86CB009C4D43 /* DatabaseManager.swift in Sources */,
 				AB5B7475285D8272001F7DBD /* SceneDelegate.swift in Sources */,
 				AB84D110286D5A9000D2A68A /* TrainerLandingVC.swift in Sources */,
+				ABFDD427287BD9E500407570 /* ClientModel.swift in Sources */,
 				AB5B747D285D8272001F7DBD /* FitnessTracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

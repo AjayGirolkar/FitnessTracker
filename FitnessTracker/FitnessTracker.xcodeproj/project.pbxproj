@@ -27,6 +27,8 @@
 		ABFDD423287AE55300407570 /* TrainerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABFDD421287AE55300407570 /* TrainerTableViewCell.xib */; };
 		ABFDD425287BD45E00407570 /* ClientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDD424287BD45E00407570 /* ClientDetailViewController.swift */; };
 		ABFDD427287BD9E500407570 /* ClientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDD426287BD9E500407570 /* ClientModel.swift */; };
+		ABFDD429287E7DC300407570 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDD428287E7DC300407570 /* ToDoViewController.swift */; };
+		ABFDD42B287E7E1900407570 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDD42A287E7E1900407570 /* ReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		ABFDD421287AE55300407570 /* TrainerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainerTableViewCell.xib; sourceTree = "<group>"; };
 		ABFDD424287BD45E00407570 /* ClientDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDetailViewController.swift; sourceTree = "<group>"; };
 		ABFDD426287BD9E500407570 /* ClientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientModel.swift; sourceTree = "<group>"; };
+		ABFDD428287E7DC300407570 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		ABFDD42A287E7E1900407570 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +151,6 @@
 				AB84D111286EBAA400D2A68A /* SignUpViewController.swift */,
 				AB84D10C286D59B800D2A68A /* Trainer */,
 				AB84D10B286D59A800D2A68A /* User */,
-				ABFDD424287BD45E00407570 /* ClientDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -192,6 +195,9 @@
 			isa = PBXGroup;
 			children = (
 				AB84D10F286D5A9000D2A68A /* TrainerLandingVC.swift */,
+				ABFDD424287BD45E00407570 /* ClientDetailViewController.swift */,
+				ABFDD428287E7DC300407570 /* ToDoViewController.swift */,
+				ABFDD42A287E7E1900407570 /* ReviewViewController.swift */,
 			);
 			path = Trainer;
 			sourceTree = "<group>";
@@ -298,10 +304,12 @@
 			files = (
 				ABEDCBB2286AA987001DACE8 /* ViewWithBorder.swift in Sources */,
 				AB5F8FF2285D8753009C4D43 /* LoginViewController.swift in Sources */,
+				ABFDD42B287E7E1900407570 /* ReviewViewController.swift in Sources */,
 				AB5B7477285D8272001F7DBD /* ViewController.swift in Sources */,
 				AB84D10E286D5A8200D2A68A /* UserLandingVC.swift in Sources */,
 				ABFDD425287BD45E00407570 /* ClientDetailViewController.swift in Sources */,
 				AB84D112286EBAA400D2A68A /* SignUpViewController.swift in Sources */,
+				ABFDD429287E7DC300407570 /* ToDoViewController.swift in Sources */,
 				ABFDD422287AE55300407570 /* TrainerTableViewCell.swift in Sources */,
 				AB5B7473285D8272001F7DBD /* AppDelegate.swift in Sources */,
 				AB5F8FF0285D86CB009C4D43 /* DatabaseManager.swift in Sources */,

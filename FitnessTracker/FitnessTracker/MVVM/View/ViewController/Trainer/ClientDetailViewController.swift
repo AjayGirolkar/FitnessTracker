@@ -37,12 +37,15 @@ class ClientDetailViewController: UIViewController {
     func initializeChildViewControllers() {
         let trainerStoryBoard = UIStoryboard(name: "Trainer", bundle: .main)
         
-        let reviewVC = trainerStoryBoard.instantiateViewController(identifier: "ReviewViewController", creator: { coder -> ReviewViewController? in
+        let reviewVC = trainerStoryBoard.instantiateViewController(identifier: "ReviewViewController",
+                                                                   creator: { coder -> ReviewViewController? in
             ReviewViewController(coder: coder)
         })
         
-        let toDoVC = trainerStoryBoard.instantiateViewController(identifier: "ToDoViewController", creator: { coder -> ToDoViewController? in
-            ToDoViewController(coder: coder)
+        let toDoVC = trainerStoryBoard.instantiateViewController(identifier: "ToDoViewController",
+                                                                 creator: { coder -> ToDoViewController? in
+            ToDoViewController(coder: coder,
+                               clientModel: self.clientModel)
         })
         
         reviewViewController = reviewVC

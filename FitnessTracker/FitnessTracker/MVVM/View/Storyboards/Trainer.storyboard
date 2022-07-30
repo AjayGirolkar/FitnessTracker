@@ -179,6 +179,8 @@
                     </view>
                     <connections>
                         <outlet property="childViewContainer" destination="id5-ec-Ayb" id="Lvl-W1-6RL"/>
+                        <outlet property="reviewButton" destination="oMo-Mg-o6b" id="3rU-Tn-r1S"/>
+                        <outlet property="toDoButton" destination="Rbh-be-1AY" id="1Mk-jf-0nK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i4i-ed-e7v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -192,9 +194,53 @@
                     <view key="view" contentMode="scaleToFill" id="elT-eH-VlG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MH0-xg-RZK">
+                                <rect key="frame" x="20" y="49" width="374" height="703"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="uF6-qs-pUk" id="Os2-Ok-aiM"/>
+                                    <outlet property="delegate" destination="uF6-qs-pUk" id="jUg-qb-P56"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tc4-nx-QfO">
+                                <rect key="frame" x="20" y="772" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="sUh-KB-NiE"/>
+                                </constraints>
+                                <color key="tintColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" subtitle="" cornerStyle="capsule">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="ADD EXERCISE +">
+                                            <attributes>
+                                                <font key="NSFont" size="14" name="Helvetica-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseBackgroundColor" systemColor="systemGray2Color"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addExerciseButtonAction:" destination="uF6-qs-pUk" eventType="touchUpInside" id="MXY-0q-OhG"/>
+                                    <segue destination="UEi-wX-kfV" kind="show" id="qRf-jp-tCM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="oT9-bU-Ueh"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="oT9-bU-Ueh" firstAttribute="trailing" secondItem="MH0-xg-RZK" secondAttribute="trailing" constant="20" id="5TK-U7-doe"/>
+                            <constraint firstItem="MH0-xg-RZK" firstAttribute="leading" secondItem="oT9-bU-Ueh" secondAttribute="leading" constant="20" id="FrE-LE-BzZ"/>
+                            <constraint firstItem="tc4-nx-QfO" firstAttribute="top" secondItem="MH0-xg-RZK" secondAttribute="bottom" constant="20" id="Icd-km-3zR"/>
+                            <constraint firstItem="oT9-bU-Ueh" firstAttribute="trailing" secondItem="tc4-nx-QfO" secondAttribute="trailing" constant="20" id="M6e-30-7h8"/>
+                            <constraint firstItem="oT9-bU-Ueh" firstAttribute="bottom" secondItem="tc4-nx-QfO" secondAttribute="bottom" constant="50" id="P6I-qq-OZl"/>
+                            <constraint firstItem="tc4-nx-QfO" firstAttribute="leading" secondItem="oT9-bU-Ueh" secondAttribute="leading" constant="20" id="aOn-Zh-hvx"/>
+                            <constraint firstItem="MH0-xg-RZK" firstAttribute="top" secondItem="oT9-bU-Ueh" secondAttribute="top" constant="5" id="xwg-qh-BwH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="todoTableViewController" destination="MH0-xg-RZK" id="eVr-FV-PFJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yob-Hi-hor" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -214,6 +260,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8B-gw-n2J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3224" y="55"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KPr-6X-Y5P">
+            <objects>
+                <viewController id="UEi-wX-kfV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Ok-qZ-tcA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="66O-SG-9xj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="e3j-pP-KUV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Fz-NK-k6C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2545" y="809"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="J5F-Si-iT6">
@@ -248,9 +310,6 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

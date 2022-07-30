@@ -20,8 +20,9 @@ class LoginViewController: UIViewController {
     }
     
     func authenticateUser() -> Bool {
-        if (usernameTextField.text?.lowercased() == "shrey") && (passwordTextField.text == "12345") {
+        if let user = UserDefaultManager.shared.isValidUser(username: usernameTextField.text ?? "", password: passwordTextField.text ?? "") {
             errorLabel.isHidden = true
+            SharedManager.shared.user = user
             return true
         } else {
             errorLabel.isHidden = false
@@ -36,6 +37,7 @@ class LoginViewController: UIViewController {
             let navViewController = UINavigationController(rootViewController: newViewController)
             navViewController.modalPresentationStyle = .fullScreen
             self.present(navViewController, animated: true, completion: nil)
+            SharedManager.shared.userType = .trainer
         }
     }
     
@@ -46,6 +48,7 @@ class LoginViewController: UIViewController {
             let navViewController = UINavigationController(rootViewController: newViewController)
             navViewController.modalPresentationStyle = .fullScreen
             self.present(navViewController, animated: true, completion: nil)
+            SharedManager.shared.userType = .client
         }
     }
 }

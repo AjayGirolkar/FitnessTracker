@@ -25,6 +25,7 @@
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ugI-Qn-di3">
                         <rect key="frame" x="20" y="38" width="25" height="24"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="A8g-36-Tdb"/>
                             <constraint firstAttribute="height" constant="25" id="aTa-Za-b4a"/>

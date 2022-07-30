@@ -15,6 +15,8 @@ class ClientDetailViewController: UIViewController {
     var toDoViewController: ToDoViewController?
     var reviewViewController: ReviewViewController?
     
+    @IBOutlet weak var toDoButton: UIButton!
+    @IBOutlet weak var reviewButton: UIButton!
     @IBOutlet weak var childViewContainer: UIView!
     
     required init?(coder: NSCoder, clientModel: ClientModel) {
@@ -70,6 +72,9 @@ class ClientDetailViewController: UIViewController {
               let reviewViewController = reviewViewController else { return }
         remove(asChildViewController: reviewViewController)
         add(asChildViewController: toDoViewController)
+        reviewButton.tintColor = .lightGray
+        toDoButton.tintColor = UIColor(hex: "#64eb34")
+        
     }
     
     @IBAction func reviewButtonAction(_ sender: Any) {
@@ -77,6 +82,9 @@ class ClientDetailViewController: UIViewController {
               let reviewViewController = reviewViewController else { return }
         remove(asChildViewController: toDoViewController)
         add(asChildViewController: reviewViewController)
+        toDoButton.tintColor = .lightGray
+        reviewButton.tintColor = UIColor(hex: "#64eb34")
+
     }
 }
 

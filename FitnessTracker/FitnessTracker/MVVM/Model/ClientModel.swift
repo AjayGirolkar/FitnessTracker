@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum UserType: String {
+    case client
+    case trainer
+}
+
 struct ClientModel {
     let name: String
     let age: Int?
@@ -27,4 +32,13 @@ struct Excercise {
 struct ReviewModel {
     var messageToUser: [String]?
     var messageFromUser: [String]?
+}
+
+
+struct User: Codable {
+    let name: String
+    let username: String
+    let email: String
+    let password: String
+    let type: String
 }

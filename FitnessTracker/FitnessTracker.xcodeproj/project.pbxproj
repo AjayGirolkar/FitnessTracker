@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB35A515288FA26A00A01272 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB35A514288FA26A00A01272 /* UIColor+Extension.swift */; };
 		AB5B7473285D8272001F7DBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B7472285D8272001F7DBD /* AppDelegate.swift */; };
 		AB5B7475285D8272001F7DBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B7474285D8272001F7DBD /* SceneDelegate.swift */; };
 		AB5B7477285D8272001F7DBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B7476285D8272001F7DBD /* ViewController.swift */; };
@@ -21,6 +22,9 @@
 		AB84D10E286D5A8200D2A68A /* UserLandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84D10D286D5A8200D2A68A /* UserLandingVC.swift */; };
 		AB84D110286D5A9000D2A68A /* TrainerLandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84D10F286D5A9000D2A68A /* TrainerLandingVC.swift */; };
 		AB84D112286EBAA400D2A68A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84D111286EBAA400D2A68A /* SignUpViewController.swift */; };
+		ABAEDB5C2895793D00B2FADF /* SharedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAEDB5B2895793D00B2FADF /* SharedManager.swift */; };
+		ABAEDB5F28957BD100B2FADF /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAEDB5E28957BD100B2FADF /* EmailValidator.swift */; };
+		ABAEDB61289586D600B2FADF /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAEDB60289586D600B2FADF /* UserDefaultManager.swift */; };
 		ABEDCB4328695D0C001DACE8 /* MyUserList.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEDCB4228695D0C001DACE8 /* MyUserList.xib */; };
 		ABEDCBB2286AA987001DACE8 /* ViewWithBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDCBB1286AA987001DACE8 /* ViewWithBorder.swift */; };
 		ABFDD422287AE55300407570 /* TrainerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDD420287AE55300407570 /* TrainerTableViewCell.swift */; };
@@ -35,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB35A514288FA26A00A01272 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		AB5B746F285D8272001F7DBD /* FitnessTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB5B7472285D8272001F7DBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB5B7474285D8272001F7DBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +56,9 @@
 		AB84D10D286D5A8200D2A68A /* UserLandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLandingVC.swift; sourceTree = "<group>"; };
 		AB84D10F286D5A9000D2A68A /* TrainerLandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerLandingVC.swift; sourceTree = "<group>"; };
 		AB84D111286EBAA400D2A68A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		ABAEDB5B2895793D00B2FADF /* SharedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedManager.swift; sourceTree = "<group>"; };
+		ABAEDB5E28957BD100B2FADF /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
+		ABAEDB60289586D600B2FADF /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		ABEDCB4228695D0C001DACE8 /* MyUserList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyUserList.xib; sourceTree = "<group>"; };
 		ABEDCBB1286AA987001DACE8 /* ViewWithBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithBorder.swift; sourceTree = "<group>"; };
 		ABFDD420287AE55300407570 /* TrainerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerTableViewCell.swift; sourceTree = "<group>"; };
@@ -97,6 +105,7 @@
 				AB5B7472285D8272001F7DBD /* AppDelegate.swift */,
 				AB5B7474285D8272001F7DBD /* SceneDelegate.swift */,
 				AB5B748A285D8315001F7DBD /* MVVM */,
+				ABAEDB5D28957BBD00B2FADF /* Helper */,
 				AB5B7489285D830D001F7DBD /* DatabaseManager */,
 				AB5B7491285D8426001F7DBD /* Resources */,
 			);
@@ -125,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				ABFDD426287BD9E500407570 /* ClientModel.swift */,
+				ABAEDB5B2895793D00B2FADF /* SharedManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				AB84D1132876A66400D2A68A /* TableViewCells */,
-				ABEDCBB0286AA973001DACE8 /* Extension */,
 				ABEDCB4128695CF4001DACE8 /* Xib */,
 				AB5B748E285D838B001F7DBD /* ViewController */,
 				AB5B748F285D83C6001F7DBD /* Storyboards */,
@@ -220,9 +229,19 @@
 			path = TableViewCells;
 			sourceTree = "<group>";
 		};
+		ABAEDB5D28957BBD00B2FADF /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				ABAEDB5E28957BD100B2FADF /* EmailValidator.swift */,
+				ABAEDB60289586D600B2FADF /* UserDefaultManager.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		ABEDCB4128695CF4001DACE8 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
+				ABEDCBB0286AA973001DACE8 /* Extension */,
 				ABEDCB4228695D0C001DACE8 /* MyUserList.xib */,
 			);
 			path = Xib;
@@ -232,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				ABEDCBB1286AA987001DACE8 /* ViewWithBorder.swift */,
+				AB35A514288FA26A00A01272 /* UIColor+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -315,10 +335,13 @@
 				ABEDCBB2286AA987001DACE8 /* ViewWithBorder.swift in Sources */,
 				ABFDD431287FCFCB00407570 /* Constants.swift in Sources */,
 				ABFDD42E287FCC4100407570 /* ExerciseTableViewCell.swift in Sources */,
+				AB35A515288FA26A00A01272 /* UIColor+Extension.swift in Sources */,
 				AB5F8FF2285D8753009C4D43 /* LoginViewController.swift in Sources */,
 				ABFDD42B287E7E1900407570 /* ReviewViewController.swift in Sources */,
+				ABAEDB61289586D600B2FADF /* UserDefaultManager.swift in Sources */,
 				AB5B7477285D8272001F7DBD /* ViewController.swift in Sources */,
 				AB84D10E286D5A8200D2A68A /* UserLandingVC.swift in Sources */,
+				ABAEDB5C2895793D00B2FADF /* SharedManager.swift in Sources */,
 				ABFDD425287BD45E00407570 /* ClientDetailViewController.swift in Sources */,
 				AB84D112286EBAA400D2A68A /* SignUpViewController.swift in Sources */,
 				ABFDD429287E7DC300407570 /* ToDoViewController.swift in Sources */,
@@ -327,6 +350,7 @@
 				AB5F8FF0285D86CB009C4D43 /* DatabaseManager.swift in Sources */,
 				AB5B7475285D8272001F7DBD /* SceneDelegate.swift in Sources */,
 				AB84D110286D5A9000D2A68A /* TrainerLandingVC.swift in Sources */,
+				ABAEDB5F28957BD100B2FADF /* EmailValidator.swift in Sources */,
 				ABFDD427287BD9E500407570 /* ClientModel.swift in Sources */,
 				AB5B747D285D8272001F7DBD /* FitnessTracker.xcdatamodeld in Sources */,
 			);

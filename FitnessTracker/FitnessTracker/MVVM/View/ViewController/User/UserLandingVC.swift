@@ -9,10 +9,15 @@ import UIKit
 
 class UserLandingVC: UIViewController {
 
+    @IBOutlet weak var userLandingTableView: UITableView!
+    var user: User = SharedManager.shared.user
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationItem.title = "Timeline"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        userLandingTableView.register(UINib.init(nibName: "ExerciseTableViewCell", bundle: nil), forCellReuseIdentifier: "ExerciseTableViewCell")
     }
     
     @IBAction func logoutButtonAction(_ sender: Any) {
@@ -21,15 +26,21 @@ class UserLandingVC: UIViewController {
         loginVC.modalPresentationStyle = .fullScreen
         self.navigationController?.present(loginVC, animated: true)
     }
+
+}
+
+extension UserLandingVC: UITableViewDelegate, UITableViewDataSource {
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        user.excerciseList?.count ?? 0
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "ExerciseTableViewCell", for: indexPath) as? ExerciseTableViewCell else { return UITableViewCell() }
+        if let exericise =  user.excerciseList?[indexPath.row] {
+            tableViewCell.configureCell(exercise: exericise)
+        }
+        return tableViewCell
+    }
+    
 }

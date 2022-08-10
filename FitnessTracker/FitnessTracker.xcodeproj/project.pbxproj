@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB0C74AA28A364BE00E25C75 /* ReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0C74A928A364BE00E25C75 /* ReviewViewController.xib */; };
+		AB0C74B228A3733400E25C75 /* ExerciseDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0C74B128A3733400E25C75 /* ExerciseDetailsViewController.xib */; };
+		AB0C74B428A376FD00E25C75 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0C74B328A376FD00E25C75 /* Int+Extension.swift */; };
 		AB35A515288FA26A00A01272 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB35A514288FA26A00A01272 /* UIColor+Extension.swift */; };
-		AB5B1AB2289A28DB00345AEE /* EditExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B1AB1289A28DB00345AEE /* EditExerciseViewController.swift */; };
+		AB5B1AB2289A28DB00345AEE /* ExerciseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B1AB1289A28DB00345AEE /* ExerciseDetailsViewController.swift */; };
 		AB5B1AB4289B954900345AEE /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B1AB3289B954900345AEE /* UIViewController+Extension.swift */; };
 		AB5B7473285D8272001F7DBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B7472285D8272001F7DBD /* AppDelegate.swift */; };
 		AB5B7475285D8272001F7DBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B7474285D8272001F7DBD /* SceneDelegate.swift */; };
@@ -41,8 +44,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB0C74A928A364BE00E25C75 /* ReviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewViewController.xib; sourceTree = "<group>"; };
+		AB0C74B128A3733400E25C75 /* ExerciseDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseDetailsViewController.xib; sourceTree = "<group>"; };
+		AB0C74B328A376FD00E25C75 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		AB35A514288FA26A00A01272 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		AB5B1AB1289A28DB00345AEE /* EditExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExerciseViewController.swift; sourceTree = "<group>"; };
+		AB5B1AB1289A28DB00345AEE /* ExerciseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailsViewController.swift; sourceTree = "<group>"; };
 		AB5B1AB3289B954900345AEE /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		AB5B746F285D8272001F7DBD /* FitnessTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB5B7472285D8272001F7DBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -218,7 +224,7 @@
 				ABFDD424287BD45E00407570 /* ClientDetailViewController.swift */,
 				ABFDD428287E7DC300407570 /* ToDoViewController.swift */,
 				ABFDD42A287E7E1900407570 /* ReviewViewController.swift */,
-				AB5B1AB1289A28DB00345AEE /* EditExerciseViewController.swift */,
+				AB5B1AB1289A28DB00345AEE /* ExerciseDetailsViewController.swift */,
 			);
 			path = Trainer;
 			sourceTree = "<group>";
@@ -248,6 +254,8 @@
 			children = (
 				ABEDCBB0286AA973001DACE8 /* Extension */,
 				ABEDCB4228695D0C001DACE8 /* MyUserList.xib */,
+				AB0C74A928A364BE00E25C75 /* ReviewViewController.xib */,
+				AB0C74B128A3733400E25C75 /* ExerciseDetailsViewController.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -258,6 +266,7 @@
 				ABEDCBB1286AA987001DACE8 /* ViewWithBorder.swift */,
 				AB35A514288FA26A00A01272 /* UIColor+Extension.swift */,
 				AB5B1AB3289B954900345AEE /* UIViewController+Extension.swift */,
+				AB0C74B328A376FD00E25C75 /* Int+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -322,6 +331,8 @@
 			files = (
 				AB84D10A286D593F00D2A68A /* Trainer.storyboard in Resources */,
 				ABEDCB4328695D0C001DACE8 /* MyUserList.xib in Resources */,
+				AB0C74AA28A364BE00E25C75 /* ReviewViewController.xib in Resources */,
+				AB0C74B228A3733400E25C75 /* ExerciseDetailsViewController.xib in Resources */,
 				AB84D108286D593300D2A68A /* User.storyboard in Resources */,
 				AB5B7482285D8274001F7DBD /* LaunchScreen.storyboard in Resources */,
 				AB5B747F285D8274001F7DBD /* Assets.xcassets in Resources */,
@@ -347,13 +358,14 @@
 				ABAEDB61289586D600B2FADF /* UserDefaultManager.swift in Sources */,
 				AB5B1AB4289B954900345AEE /* UIViewController+Extension.swift in Sources */,
 				AB5B7477285D8272001F7DBD /* ViewController.swift in Sources */,
+				AB0C74B428A376FD00E25C75 /* Int+Extension.swift in Sources */,
 				AB84D10E286D5A8200D2A68A /* UserLandingVC.swift in Sources */,
 				ABAEDB5C2895793D00B2FADF /* SharedManager.swift in Sources */,
 				ABFDD425287BD45E00407570 /* ClientDetailViewController.swift in Sources */,
 				AB84D112286EBAA400D2A68A /* SignUpViewController.swift in Sources */,
 				ABFDD429287E7DC300407570 /* ToDoViewController.swift in Sources */,
 				ABFDD422287AE55300407570 /* TrainerTableViewCell.swift in Sources */,
-				AB5B1AB2289A28DB00345AEE /* EditExerciseViewController.swift in Sources */,
+				AB5B1AB2289A28DB00345AEE /* ExerciseDetailsViewController.swift in Sources */,
 				AB5B7473285D8272001F7DBD /* AppDelegate.swift in Sources */,
 				AB5F8FF0285D86CB009C4D43 /* DatabaseManager.swift in Sources */,
 				AB5B7475285D8272001F7DBD /* SceneDelegate.swift in Sources */,

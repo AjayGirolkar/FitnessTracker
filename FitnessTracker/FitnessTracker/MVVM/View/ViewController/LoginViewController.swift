@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SharedManager.setupDefaultData()
     }
     
     func authenticateUser() -> Bool {

@@ -28,20 +28,23 @@ class ToDoViewController: UIViewController {
     }
         
     @IBAction func addExerciseButtonAction(_ sender: Any) {
+        let exerciseDetailsViewController = ExerciseDetailsViewController(nibName: "ExerciseDetailsViewController", bundle: nil)
+        self.navigationController?.pushViewController(exerciseDetailsViewController, animated: true)
+        
     }
 }
 
 extension ToDoViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return clientModel.excerciseList?.count ?? 5
+        return clientModel.exerciseList?.count ?? 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "ExerciseTableViewCell", for: indexPath) as? ExerciseTableViewCell else { return UITableViewCell() }
-        //tableViewCell.trainerLabel.text = clientList[indexPath.row].name
+        if let exericise =  clientModel.exerciseList?[indexPath.row] {
+            tableViewCell.configureCell(exercise: exericise)
+        }
         return tableViewCell
     }
-  
-    
 }
 

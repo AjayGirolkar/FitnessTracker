@@ -9,13 +9,8 @@ import UIKit
 
 class TrainerLandingVC: UIViewController {
     @IBOutlet weak var trainerTableView: UITableView!
-    
-    var clientList = [ClientModel(name: "Shrey", age: 20),
-                      ClientModel(name: "Ajay", age: 29),
-                      ClientModel(name: "Avenger", age: 40),
-                      ClientModel(name: "Thor", age: 150),
-                      ClientModel(name: "Hulk", age: 300),
-                      ClientModel(name: "Iron Man", age: 35)]
+    var user: User = SharedManager.shared.user
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +32,7 @@ class TrainerLandingVC: UIViewController {
     }
     @IBAction func addClientButtonAction(_ sender: Any) {
         let newModel = ClientModel(name: "Enter details", age: nil)
-        clientList.append(newModel)
+        user.clientModel?.append(newModel)
         trainerTableView.reloadData()
     }
 }
@@ -46,20 +41,21 @@ class TrainerLandingVC: UIViewController {
 extension TrainerLandingVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return clientList.count
+        return user.clientModel?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "TrainerTableViewCell", for: indexPath) as? TrainerTableViewCell else { return UITableViewCell() }
-        tableViewCell.trainerLabel.text = clientList[indexPath.row].name
+        tableViewCell.trainerLabel.text = user.clientModel?[indexPath.row].name
         tableViewCell.selectionStyle = .none
         return tableViewCell
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let clientModel = clientList[indexPath.row]
-        navigateToClientViewController(clientModel: clientModel)
+        if let clientModel = user.clientModel?[indexPath.row] {
+            navigateToClientViewController(clientModel: clientModel)
+        }
     }
     
     func navigateToClientViewController(clientModel: ClientModel) {

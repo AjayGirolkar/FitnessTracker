@@ -95,6 +95,9 @@
                                             <segment title="OFF"/>
                                         </segments>
                                         <color key="selectedSegmentTintColor" red="0.30954101839999998" green="0.88150376080000004" blue="0.47218000830000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="segmentoControllerAction:" destination="KGk-i7-Jjw" eventType="valueChanged" id="zkQ-VW-rcf"/>
+                                        </connections>
                                     </segmentedControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="61" translatesAutoresizingMaskIntoConstraints="NO" id="LAX-sC-Sv0">
                                         <rect key="frame" x="10" y="56.5" width="180" height="19.5"/>
@@ -180,6 +183,14 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="exerciseImageView" destination="mIw-6k-qFu" id="L3n-37-BgI"/>
+                <outlet property="exerciseName" destination="ebZ-Sr-cEB" id="2n3-Em-ALx"/>
+                <outlet property="numberOfSetsLabel" destination="LAX-sC-Sv0" id="j68-0b-g5l"/>
+                <outlet property="onOffSegmentController" destination="7e6-dB-DKX" id="srM-9a-fnk"/>
+                <outlet property="repsCountLabel" destination="d4n-Tl-RqS" id="eDX-BO-XRK"/>
+                <outlet property="weightLabel" destination="eRE-k8-c4l" id="BeD-cX-87e"/>
+            </connections>
             <point key="canvasLocation" x="52.173913043478265" y="-134.93303571428569"/>
         </tableViewCell>
     </objects>

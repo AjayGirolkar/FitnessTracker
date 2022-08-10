@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditExerciseViewController: UIViewController, UINavigationControllerDelegate {
+class ExerciseDetailsViewController: UIViewController, UINavigationControllerDelegate {
     
     
     @IBOutlet weak var imageView: UIImageView!
@@ -34,17 +34,17 @@ class EditExerciseViewController: UIViewController, UINavigationControllerDelega
         if isExerciseEditModeOn {
             exerciseNameTextField.isUserInteractionEnabled = true
             exerciseNameEditButton.image(for: .normal)
-            exerciseNameEditButton.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
+            exerciseNameEditButton.setImage(Image.doneImage, for: .normal)
         } else {
             exerciseNameTextField.isUserInteractionEnabled = false
-            exerciseNameEditButton.setImage(UIImage(systemName: "pencil"), for: .normal)
+            exerciseNameEditButton.setImage(Image.pencil, for: .normal)
         }
         if isDescriptionTextViewEditModeOn {
             descriptionTextView.isUserInteractionEnabled = true
-            descriptionEditButton.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
+            descriptionEditButton.setImage(Image.doneImage, for: .normal)
         }else {
             descriptionTextView.isUserInteractionEnabled = false
-            descriptionEditButton.setImage(UIImage(systemName: "pencil"), for: .normal)
+            descriptionEditButton.setImage(Image.pencil, for: .normal)
         }
     }
     
@@ -64,7 +64,7 @@ class EditExerciseViewController: UIViewController, UINavigationControllerDelega
     }
 }
 
-extension EditExerciseViewController: UIImagePickerControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
+extension ExerciseDetailsViewController: UIImagePickerControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }

@@ -8,30 +8,59 @@
 import UIKit
 
 class ReviewViewController: UIViewController {
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
     
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    @IBOutlet weak var clientMessageEditButton: UIButton!
+    @IBOutlet weak var trainerMessageEditButton: UIButton!
+    @IBOutlet weak var clientMessageTextView: UITextView!
+    @IBOutlet weak var trainerMessageTextView: UITextView!
+    
+    var user: User = SharedManager.shared.user
+    var isClientMessageEditModeOn: Bool = false
+    var isTrainerMessageEditModeOn: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureViewForUser()
+        trainerMessageTextView.isUserInteractionEnabled = false
+        clientMessageTextView.isUserInteractionEnabled = false
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configureViewForUser() {
+        if user.type == .client {
+            trainerMessageEditButton.isUserInteractionEnabled = false
+            trainerMessageEditButton.setImage(Image.lockImage, for: .normal)
+        } else {
+            clientMessageEditButton.isUserInteractionEnabled = false
+            clientMessageEditButton.setImage(Image.lockImage, for: .normal)
+        }
     }
-    */
+    
+    @IBAction func clientMessageButtonAction(_ sender: Any) {
+        isClientMessageEditModeOn = !isClientMessageEditModeOn
+        
+        if isClientMessageEditModeOn {
+            clientMessageTextView.isUserInteractionEnabled = true
+            clientMessageEditButton.setImage(Image.doneImage, for: .normal)
+        } else {
+            clientMessageTextView.isUserInteractionEnabled = false
+            clientMessageEditButton.setImage(Image.pencil, for: .normal)
+        }
+    }
+    
+    @IBAction func trainerMessageButtonAction(_ sender: Any) {
+        isTrainerMessageEditModeOn = !isTrainerMessageEditModeOn
+        
+        if isTrainerMessageEditModeOn {
+            trainerMessageTextView.isUserInteractionEnabled = true
+            trainerMessageEditButton.setImage(Image.doneImage, for: .normal)
+        } else {
+            trainerMessageTextView.isUserInteractionEnabled = false
+            trainerMessageEditButton.setImage(Image.pencil, for: .normal)
+        }
+    }
+    
+}
 
+extension ReviewViewController: UITextViewDelegate {
+    
 }

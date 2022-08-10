@@ -16,11 +16,11 @@ struct ClientModel: Codable {
     let name: String
     let age: Int?
     var imageName: String?
-    var excerciseList: [Excercise]?
+    var exerciseList: [Exercise]?
     var reviewModel: ReviewModel?
 }
 
-struct Excercise: Codable {
+struct Exercise: Codable {
     var exericiseName: String
     var imageName: String = ""
     var repetition: Int
@@ -42,5 +42,7 @@ struct User: Codable {
     let password: String
     let type: UserType
     let age: Int?
-    let clientModel: ClientModel?
+    var clientModel: [ClientModel]?
+    var excerciseList: [Exercise]?
+    var reviewModel: ReviewModel?
 }

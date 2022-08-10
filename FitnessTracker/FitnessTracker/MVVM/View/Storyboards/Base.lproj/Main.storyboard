@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="9Mf-3S-VCc">
             <objects>
-                <viewController id="KwF-Rb-dZA" customClass="LoginViewController" customModule="FitnessTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="KwF-Rb-dZA" customClass="LoginViewController" customModule="FitnessTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nv0-wd-mvC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -595,7 +595,7 @@
                         <outlet property="emailTextField" destination="FPf-je-mSi" id="EEQ-xt-fWL"/>
                         <outlet property="nameTextField" destination="jHv-ZR-Ckg" id="Qfz-lJ-C3g"/>
                         <outlet property="passwordTextField" destination="dMJ-vh-wey" id="HAT-aQ-Bk2"/>
-                        <outlet property="usernameTextField" destination="jHv-ZR-Ckg" id="TLF-7s-Lgc"/>
+                        <outlet property="usernameTextField" destination="fvy-AJ-nOc" id="E5n-xo-m8k"/>
                         <outlet property="validateEmailErrorLabel" destination="yBX-gK-2fM" id="gHc-d2-EVg"/>
                     </connections>
                 </viewController>

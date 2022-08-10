@@ -20,16 +20,8 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
+        addDismissKeyboardAction()
         
-        // Do any additional setup after loading the view.
-    }
-    
-    //Calls this function when the tap is recognized.
-    @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
     }
     
     @IBAction func signUpAsTrainerButtonAction(_ sender: Any) {
@@ -75,7 +67,9 @@ class SignUpViewController: UIViewController {
                             username: username,
                             email: email,
                             password: password,
-                            type: userType.rawValue)
+                            type: userType,
+                            age: nil,
+                            clientModel: nil)
             
             UserDefaultManager.shared.trySavingUser(user: user) { success in
                 if success {

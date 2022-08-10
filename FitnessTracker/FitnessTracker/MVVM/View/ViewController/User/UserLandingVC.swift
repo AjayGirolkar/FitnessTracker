@@ -15,7 +15,13 @@ class UserLandingVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func logoutButtonAction(_ sender: Any) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
+        loginVC.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(loginVC, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

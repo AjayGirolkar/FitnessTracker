@@ -55,9 +55,10 @@ class ClientDetailViewController: UIViewController {
     }
     
     func updateNavigationBar() {
+        self.navigationItem.largeTitleDisplayMode = .never
         self.navigationController?.navigationBar.topItem?.title = " "
-        self.navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "chevron.left.2")
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.left.2")
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "chevron.left")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.left")
         navigationController?.navigationBar.tintColor = .black
     }
     

@@ -20,7 +20,7 @@ class UserDefaultManager {
                 
                 // Decode Note
                 let user = try decoder.decode(User.self, from: data)
-                if user.username.lowercased() == username, user.password == password {
+                if user.username == username, user.password == password {
                     return user
                 }
             } catch {

@@ -22,6 +22,24 @@ class TrainerLandingVC: UIViewController {
         trainerTableView.register(UINib.init(nibName: "TrainerTableViewCell", bundle: nil),
                                   forCellReuseIdentifier: "TrainerTableViewCell")
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "Trainer"
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    @IBAction func logoutButtonAction(_ sender: Any) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
+        loginVC.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(loginVC, animated: true)
+    }
+    @IBAction func addClientButtonAction(_ sender: Any) {
+        let newModel = ClientModel(name: "Enter details", age: nil)
+        clientList.append(newModel)
+        trainerTableView.reloadData()
+    }
 }
 
 //MARK: TableView Datasource, Delegate
@@ -34,6 +52,7 @@ extension TrainerLandingVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "TrainerTableViewCell", for: indexPath) as? TrainerTableViewCell else { return UITableViewCell() }
         tableViewCell.trainerLabel.text = clientList[indexPath.row].name
+        tableViewCell.selectionStyle = .none
         return tableViewCell
     }
     

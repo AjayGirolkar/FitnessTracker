@@ -20,13 +20,46 @@ class ExerciseDetailsViewController: UIViewController, UINavigationControllerDel
     
     @IBOutlet weak var exerciseNameEditButton: UIButton!
     @IBOutlet weak var descriptionEditButton: UIButton!
+    var exercise: Exercise
+    let userType: UserType
+    
+    init(exercise: Exercise, userType: UserType) {
+        self.exercise = exercise
+        self.userType = userType
+        super.init(nibName: "ExerciseDetailsViewController", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.allowsEditing = true
         picker.delegate = self
+        configureViews() 
         updateEditCondition()
-       addDismissKeyboardAction()
+        addDismissKeyboardAction()
+    }
+    
+    func configureViews() {
+        if let image = UIImage(named: exercise.imageName) {
+            imageView.image = image
+            if let url =  Bundle.main.url(forResource: "crunches", withExtension: "gif"),
+               let imageData = try? Data(contentsOf: url),
+            let gifImage = UIImage.gifImageWithData(imageData) {
+                imageView.image = gifImage
+            }
+
+        } else {
+            imageView.image = UIImage(systemName: "camera.fill")
+        }
+        title = exercise.exericiseName
+        descriptionTextView.text = exercise.exerciseDescription
+        if userType == .client {
+            exerciseNameEditButton.isHidden = true
+            descriptionEditButton.isHidden = true
+        }
     }
     
     

@@ -11,6 +11,10 @@
 		AB0C74B228A3733400E25C75 /* ExerciseDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0C74B128A3733400E25C75 /* ExerciseDetailsViewController.xib */; };
 		AB0C74B428A376FD00E25C75 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0C74B328A376FD00E25C75 /* Int+Extension.swift */; };
 		AB35A515288FA26A00A01272 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB35A514288FA26A00A01272 /* UIColor+Extension.swift */; };
+		AB594BE728A7B42E00F1FD9C /* Image+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB594BE628A7B42E00F1FD9C /* Image+GIF.swift */; };
+		AB594BEA28A7B51D00F1FD9C /* crunches.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB594BE928A7B51D00F1FD9C /* crunches.gif */; };
+		AB594BEC28ACAE9600F1FD9C /* AddExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB594BEB28ACAE9600F1FD9C /* AddExerciseTableViewController.swift */; };
+		AB594BEE28AD5D7A00F1FD9C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB594BED28AD5D7A00F1FD9C /* CardView.swift */; };
 		AB5B1AB2289A28DB00345AEE /* ExerciseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B1AB1289A28DB00345AEE /* ExerciseDetailsViewController.swift */; };
 		AB5B1AB4289B954900345AEE /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B1AB3289B954900345AEE /* UIViewController+Extension.swift */; };
 		AB5B7473285D8272001F7DBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B7472285D8272001F7DBD /* AppDelegate.swift */; };
@@ -20,7 +24,6 @@
 		AB5B747D285D8272001F7DBD /* FitnessTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB5B747B285D8272001F7DBD /* FitnessTracker.xcdatamodeld */; };
 		AB5B747F285D8274001F7DBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB5B747E285D8274001F7DBD /* Assets.xcassets */; };
 		AB5B7482285D8274001F7DBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB5B7480285D8274001F7DBD /* LaunchScreen.storyboard */; };
-		AB5F8FF0285D86CB009C4D43 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5F8FEF285D86CB009C4D43 /* DatabaseManager.swift */; };
 		AB5F8FF2285D8753009C4D43 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5F8FF1285D8753009C4D43 /* LoginViewController.swift */; };
 		AB84D108286D593300D2A68A /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB84D107286D593300D2A68A /* User.storyboard */; };
 		AB84D10A286D593F00D2A68A /* Trainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB84D109286D593F00D2A68A /* Trainer.storyboard */; };
@@ -48,6 +51,10 @@
 		AB0C74B128A3733400E25C75 /* ExerciseDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseDetailsViewController.xib; sourceTree = "<group>"; };
 		AB0C74B328A376FD00E25C75 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		AB35A514288FA26A00A01272 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		AB594BE628A7B42E00F1FD9C /* Image+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+GIF.swift"; sourceTree = "<group>"; };
+		AB594BE928A7B51D00F1FD9C /* crunches.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = crunches.gif; sourceTree = "<group>"; };
+		AB594BEB28ACAE9600F1FD9C /* AddExerciseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseTableViewController.swift; sourceTree = "<group>"; };
+		AB594BED28AD5D7A00F1FD9C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		AB5B1AB1289A28DB00345AEE /* ExerciseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailsViewController.swift; sourceTree = "<group>"; };
 		AB5B1AB3289B954900345AEE /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		AB5B746F285D8272001F7DBD /* FitnessTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,7 +66,6 @@
 		AB5B747E285D8274001F7DBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB5B7481285D8274001F7DBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB5B7483285D8274001F7DBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB5F8FEF285D86CB009C4D43 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		AB5F8FF1285D8753009C4D43 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB84D107286D593300D2A68A /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		AB84D109286D593F00D2A68A /* Trainer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trainer.storyboard; sourceTree = "<group>"; };
@@ -93,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB594BE828A7B51400F1FD9C /* GIF */ = {
+			isa = PBXGroup;
+			children = (
+				AB594BE928A7B51D00F1FD9C /* crunches.gif */,
+			);
+			path = GIF;
+			sourceTree = "<group>";
+		};
 		AB5B7466285D8272001F7DBD = {
 			isa = PBXGroup;
 			children = (
@@ -116,18 +130,9 @@
 				AB5B7474285D8272001F7DBD /* SceneDelegate.swift */,
 				AB5B748A285D8315001F7DBD /* MVVM */,
 				ABAEDB5D28957BBD00B2FADF /* Helper */,
-				AB5B7489285D830D001F7DBD /* DatabaseManager */,
 				AB5B7491285D8426001F7DBD /* Resources */,
 			);
 			path = FitnessTracker;
-			sourceTree = "<group>";
-		};
-		AB5B7489285D830D001F7DBD /* DatabaseManager */ = {
-			isa = PBXGroup;
-			children = (
-				AB5F8FEF285D86CB009C4D43 /* DatabaseManager.swift */,
-			);
-			path = DatabaseManager;
 			sourceTree = "<group>";
 		};
 		AB5B748A285D8315001F7DBD /* MVVM */ = {
@@ -135,7 +140,6 @@
 			children = (
 				AB5B748B285D832A001F7DBD /* Model */,
 				AB5B748C285D836C001F7DBD /* View */,
-				AB5B748D285D8373001F7DBD /* ViewModel */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -159,13 +163,6 @@
 				AB5B7490285D83F6001F7DBD /* TableViewCell */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		AB5B748D285D8373001F7DBD /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		AB5B748E285D838B001F7DBD /* ViewController */ = {
@@ -200,6 +197,7 @@
 		AB5B7491285D8426001F7DBD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AB594BE828A7B51400F1FD9C /* GIF */,
 				AB5B747E285D8274001F7DBD /* Assets.xcassets */,
 				AB5B7483285D8274001F7DBD /* Info.plist */,
 				AB5B7480285D8274001F7DBD /* LaunchScreen.storyboard */,
@@ -225,6 +223,7 @@
 				ABFDD428287E7DC300407570 /* ToDoViewController.swift */,
 				ABFDD42A287E7E1900407570 /* ReviewViewController.swift */,
 				AB5B1AB1289A28DB00345AEE /* ExerciseDetailsViewController.swift */,
+				AB594BEB28ACAE9600F1FD9C /* AddExerciseTableViewController.swift */,
 			);
 			path = Trainer;
 			sourceTree = "<group>";
@@ -245,6 +244,7 @@
 			children = (
 				ABAEDB5E28957BD100B2FADF /* EmailValidator.swift */,
 				ABAEDB60289586D600B2FADF /* UserDefaultManager.swift */,
+				AB594BED28AD5D7A00F1FD9C /* CardView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -267,6 +267,7 @@
 				AB35A514288FA26A00A01272 /* UIColor+Extension.swift */,
 				AB5B1AB3289B954900345AEE /* UIViewController+Extension.swift */,
 				AB0C74B328A376FD00E25C75 /* Int+Extension.swift */,
+				AB594BE628A7B42E00F1FD9C /* Image+GIF.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -337,6 +338,7 @@
 				AB5B7482285D8274001F7DBD /* LaunchScreen.storyboard in Resources */,
 				AB5B747F285D8274001F7DBD /* Assets.xcassets in Resources */,
 				ABFDD42F287FCC4100407570 /* ExerciseTableViewCell.xib in Resources */,
+				AB594BEA28A7B51D00F1FD9C /* crunches.gif in Resources */,
 				ABFDD423287AE55300407570 /* TrainerTableViewCell.xib in Resources */,
 				AB5B747A285D8272001F7DBD /* Main.storyboard in Resources */,
 			);
@@ -361,18 +363,20 @@
 				AB0C74B428A376FD00E25C75 /* Int+Extension.swift in Sources */,
 				AB84D10E286D5A8200D2A68A /* UserLandingVC.swift in Sources */,
 				ABAEDB5C2895793D00B2FADF /* SharedManager.swift in Sources */,
+				AB594BE728A7B42E00F1FD9C /* Image+GIF.swift in Sources */,
 				ABFDD425287BD45E00407570 /* ClientDetailViewController.swift in Sources */,
 				AB84D112286EBAA400D2A68A /* SignUpViewController.swift in Sources */,
 				ABFDD429287E7DC300407570 /* ToDoViewController.swift in Sources */,
 				ABFDD422287AE55300407570 /* TrainerTableViewCell.swift in Sources */,
 				AB5B1AB2289A28DB00345AEE /* ExerciseDetailsViewController.swift in Sources */,
 				AB5B7473285D8272001F7DBD /* AppDelegate.swift in Sources */,
-				AB5F8FF0285D86CB009C4D43 /* DatabaseManager.swift in Sources */,
 				AB5B7475285D8272001F7DBD /* SceneDelegate.swift in Sources */,
+				AB594BEE28AD5D7A00F1FD9C /* CardView.swift in Sources */,
 				AB84D110286D5A9000D2A68A /* TrainerLandingVC.swift in Sources */,
 				ABAEDB5F28957BD100B2FADF /* EmailValidator.swift in Sources */,
 				ABFDD427287BD9E500407570 /* ClientModel.swift in Sources */,
 				AB5B747D285D8272001F7DBD /* FitnessTracker.xcdatamodeld in Sources */,
+				AB594BEC28ACAE9600F1FD9C /* AddExerciseTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

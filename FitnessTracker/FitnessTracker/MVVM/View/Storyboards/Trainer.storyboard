@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SbQ-pg-pIF" userLabel="trainerTableView">
-                                <rect key="frame" x="16" y="104" width="382" height="664"/>
+                                <rect key="frame" x="16" y="104" width="382" height="672"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="4eH-vx-L1g"/>
@@ -27,7 +27,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tr-av-oLK">
-                                <rect key="frame" x="24" y="784" width="366" height="50"/>
+                                <rect key="frame" x="24" y="792" width="366" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="c2r-g7-NGT"/>
                                 </constraints>
@@ -45,7 +45,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="0tr-av-oLK" secondAttribute="bottom" constant="28" id="5DS-Mg-jPc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="0tr-av-oLK" secondAttribute="bottom" constant="20" id="5DS-Mg-jPc"/>
                             <constraint firstItem="SbQ-pg-pIF" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Net-8h-xNG"/>
                             <constraint firstItem="SbQ-pg-pIF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="SFX-Rg-hiy"/>
                             <constraint firstItem="SbQ-pg-pIF" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="YfN-Si-YFB"/>
@@ -134,7 +134,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMo-Mg-o6b">
                                                 <rect key="frame" x="200.5" y="0.0" width="173.5" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
@@ -151,8 +151,10 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="hVI-B0-0HI" secondAttribute="trailing" constant="20" id="2ek-ua-0UJ"/>
                                     <constraint firstAttribute="bottom" secondItem="hVI-B0-0HI" secondAttribute="bottom" constant="10" id="A3x-Ub-jGz"/>
@@ -167,7 +169,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vhp-pm-L0b"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="vhp-pm-L0b" firstAttribute="bottom" secondItem="id5-ec-Ayb" secondAttribute="bottom" id="16C-4g-8u7"/>
                             <constraint firstItem="Utu-tS-KwV" firstAttribute="top" secondItem="vhp-pm-L0b" secondAttribute="top" id="7Ua-ph-ATc"/>
@@ -196,9 +198,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MH0-xg-RZK">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MH0-xg-RZK">
                                 <rect key="frame" x="20" y="49" width="374" height="703"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="uF6-qs-pUk" id="Os2-Ok-aiM"/>
                                     <outlet property="delegate" destination="uF6-qs-pUk" id="jUg-qb-P56"/>
@@ -245,6 +247,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yob-Hi-hor" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2546" y="65"/>
+        </scene>
+        <!--Add Exercise Table View Controller-->
+        <scene sceneID="yzA-ww-H7s">
+            <objects>
+                <viewController storyboardIdentifier="AddExerciseTableViewController" id="7NG-nb-Hso" customClass="AddExerciseTableViewController" customModule="FitnessTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BP9-4h-fRs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Kf4-3v-VD3">
+                                <rect key="frame" x="20" y="54" width="374" height="788"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7NG-nb-Hso" id="q4S-41-i1g"/>
+                                    <outlet property="delegate" destination="7NG-nb-Hso" id="eYs-7P-uEA"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dJ6-Xm-vRM"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="dJ6-Xm-vRM" firstAttribute="bottom" secondItem="Kf4-3v-VD3" secondAttribute="bottom" constant="20" id="Axd-VW-sPH"/>
+                            <constraint firstItem="Kf4-3v-VD3" firstAttribute="leading" secondItem="dJ6-Xm-vRM" secondAttribute="leading" constant="20" id="U05-Kt-GYM"/>
+                            <constraint firstItem="dJ6-Xm-vRM" firstAttribute="trailing" secondItem="Kf4-3v-VD3" secondAttribute="trailing" constant="20" id="U4l-TQ-yty"/>
+                            <constraint firstItem="Kf4-3v-VD3" firstAttribute="top" secondItem="dJ6-Xm-vRM" secondAttribute="top" constant="10" id="xCU-h4-eHG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Kf4-3v-VD3" id="hHR-nV-WIo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VEY-9c-ybQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3527" y="93"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="J5F-Si-iT6">

@@ -39,12 +39,6 @@ class ClientDetailViewController: UIViewController {
     func initializeChildViewControllers() {
         let trainerStoryBoard = UIStoryboard(name: "Trainer", bundle: .main)
         let reviewVC = ReviewViewController(nibName: "ReviewViewController", bundle: nil)
-        
-//        let reviewVC = trainerStoryBoard.instantiateViewController(identifier: "ReviewViewController",
-//                                                                   creator: { coder -> ReviewViewController? in
-//            ReviewViewController(coder: coder)
-//        })
-        
         let toDoVC = trainerStoryBoard.instantiateViewController(identifier: "ToDoViewController",
                                                                  creator: { coder -> ToDoViewController? in
             ToDoViewController(coder: coder,
@@ -55,13 +49,7 @@ class ClientDetailViewController: UIViewController {
         toDoViewController = toDoVC
     }
     
-    func updateNavigationBar() {
-        self.navigationItem.largeTitleDisplayMode = .never
-        self.navigationController?.navigationBar.topItem?.title = " "
-        self.navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "chevron.left")
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.left")
-        navigationController?.navigationBar.tintColor = .black
-    }
+    
     
     //MARK: Button Action
     

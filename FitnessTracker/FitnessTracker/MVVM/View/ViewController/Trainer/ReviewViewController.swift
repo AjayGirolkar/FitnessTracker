@@ -23,6 +23,12 @@ class ReviewViewController: UIViewController {
         configureViewForUser()
         trainerMessageTextView.isUserInteractionEnabled = false
         clientMessageTextView.isUserInteractionEnabled = false
+        setupData()
+    }
+    
+    func setupData() {
+        clientMessageTextView.text = user.reviewModel?.messageFromUser?.first ?? ""
+        trainerMessageTextView.text = user.reviewModel?.messageToUser?.first ?? ""
     }
     
     func configureViewForUser() {

@@ -38,9 +38,15 @@ extension UserLandingVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "ExerciseTableViewCell", for: indexPath) as? ExerciseTableViewCell else { return UITableViewCell() }
         if let exericise =  user.excerciseList?[indexPath.row] {
-            tableViewCell.configureCell(exercise: exericise)
+            tableViewCell.configureCell(exercise: exericise, userType: user.type, hideOnOffSwitch: user.type == .client)
         }
         return tableViewCell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let exercise = user.excerciseList?[indexPath.row] {
+            let exerciseDetailsViewController = ExerciseDetailsViewController(exercise: exercise, userType: user.type)
+        self.navigationController?.pushViewController(exerciseDetailsViewController, animated: true)
+        }
+    }
 }

@@ -19,6 +19,7 @@ class ExerciseTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = .clear
     }
     
     override func layoutSubviews() {
@@ -29,14 +30,20 @@ class ExerciseTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configureCell(exercise: Exercise) {
+    func configureCell(exercise: Exercise, userType: UserType, hideOnOffSwitch: Bool = false) {
         exerciseName.text = exercise.exericiseName
         exerciseImageView.image = UIImage(named: exercise.imageName)
         repsCountLabel.text = exercise.repetition.toString()
         weightLabel.text = exercise.weight.toString()
         onOffSegmentController.selectedSegmentIndex = exercise.isExerciseOn ? 0 : 1
+        onOffSegmentController.isHidden = hideOnOffSwitch
     }
     @IBAction func segmentoControllerAction(_ sender: Any) {
+        if onOffSegmentController.selectedSegmentIndex == 0 {
+            onOffSegmentController.selectedSegmentTintColor = .green
+        } else {
+            onOffSegmentController.selectedSegmentTintColor = .lightGray
+        }
     }
     
 }

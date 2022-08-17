@@ -9,6 +9,14 @@ import UIKit
 
 extension UIViewController {
     
+    func updateNavigationBar() {
+        self.navigationItem.largeTitleDisplayMode = .never
+        self.navigationController?.navigationBar.topItem?.title = " "
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "chevron.left")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.left")
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
     func addDismissKeyboardAction(){
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)

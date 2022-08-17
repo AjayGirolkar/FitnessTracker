@@ -15,16 +15,12 @@ class UserDefaultManager {
         
         if let data = UserDefaults.standard.data(forKey: username) {
             do {
-                // Create JSON Decoder
-                let decoder = JSONDecoder()
-                
-                // Decode Note
-                let user = try decoder.decode(User.self, from: data)
+                let user = try JSONDecoder().decode(User.self, from: data)
                 if user.username == username, user.password == password {
                     return user
                 }
             } catch {
-                print("Unable to Decode Note (\(error))")
+                print("Unable to Decode user (\(error))")
             }
         }
         return nil
@@ -32,17 +28,48 @@ class UserDefaultManager {
     
     func trySavingUser(user: User, completion: (Bool) -> ()) {
         do {
-            // Create JSON Encoder
-            let encoder = JSONEncoder()
-            
-            // Encode Note
-            let data = try encoder.encode(user)
-            
-            // Write/Set Data
+            let data = try JSONEncoder().encode(user)
             UserDefaults.standard.set(data, forKey: user.username)
             completion(true)
         } catch {
-            print("Unable to Encode Note (\(error))")
+            print("Unable to Encode user (\(error))")
+            completion(false)
+        }
+    }
+    
+    func isUserAvailable(username: String) -> User? {
+        if let data = UserDefaults.standard.data(forKey: username) {
+            do {
+               let user = try JSONDecoder().decode(User.self, from: data)
+                if user.username == username {
+                    return user
+                }
+            } catch {
+                print("Unable to Found user (\(error))")
+            }
+        }
+        return nil
+    }
+    
+    func getExerciseList() -> [Exercise]? {
+        if let data = UserDefaults.standard.data(forKey: "exerciseList") {
+            do {
+               let exerciseList = try JSONDecoder().decode([Exercise].self, from: data)
+                return exerciseList
+            } catch {
+                print("Unable to Found user (\(error))")
+            }
+        }
+        return nil
+    }
+    
+    func saveExerciseList(exerciseList: [Exercise], completion: (Bool) -> ()) {
+        do {
+            let data = try JSONEncoder().encode(exerciseList)
+            UserDefaults.standard.set(data, forKey: "exerciseList")
+            completion(true)
+        } catch {
+            print("Unable to Encode user (\(error))")
             completion(false)
         }
     }

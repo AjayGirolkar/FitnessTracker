@@ -27,6 +27,7 @@ struct Exercise: Codable {
     var set: Int
     var weight: Int
     var isExerciseOn: Bool = false
+    var exerciseDescription: String = ""
 }
 
 struct ReviewModel: Codable {

@@ -37,6 +37,7 @@ class ExerciseDetailsViewController: UIViewController, UINavigationControllerDel
         super.viewDidLoad()
         picker.allowsEditing = true
         picker.delegate = self
+        updateNavigationBar()
         configureViews() 
         updateEditCondition()
         addDismissKeyboardAction()

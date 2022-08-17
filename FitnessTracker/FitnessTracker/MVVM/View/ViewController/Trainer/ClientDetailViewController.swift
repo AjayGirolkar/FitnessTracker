@@ -30,10 +30,12 @@ class ClientDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = clientModel.name
         updateNavigationBar()
         initializeChildViewControllers()
         addToDoViewController()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.title = clientModel.name
     }
     
     func initializeChildViewControllers() {

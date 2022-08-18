@@ -38,10 +38,10 @@ class SharedManager {
                           ClientModel(name: "Iron Man", age: 35,
                                       exerciseList: exerciseList,
                                       reviewModel: reviewModel)]
-        if let user = UserDefaultManager.shared.isUserAvailable(username: "shrey@gmail.com") {
-            shared.user = user
-            return //user already present
-        }
+//        if let user = UserDefaultManager.shared.isUserAvailable(username: "shrey@gmail.com") {
+//            shared.user = user
+//            return //user already present
+//        }
         shared.user = User(name: "Shrey", username: "shrey@gmail.com", email: "shrey@gmail.com", password: "Shrey@123", type: .client, age: 20, clientModel: clientList, excerciseList: exerciseList, reviewModel: reviewModel)
         UserDefaultManager.shared.trySavingUser(user: SharedManager.shared.user) { success in
             print("user saved successfully")
@@ -52,45 +52,38 @@ class SharedManager {
         if let exerciseList = UserDefaultManager.shared.getExerciseList() {
             return exerciseList
         } else {
-            let exerciseList = [Exercise(exericiseName: "Barberll curl",
-                                          imageName: ExerciseName.barbellCurl,
-                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true),
-                                Exercise(exericiseName: "Chest press",
-                                          imageName: ExerciseName.chestpress,
-                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true),
-                                Exercise(exericiseName: "Bridge Exercisel",
-                                          imageName: ExerciseName.bridgeExercise,
-                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true),
+            let exerciseList = [Exercise(exericiseName: "Lat pull down",
+                                          imageName: ExerciseName.latPullDown,
+                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true,
+                                         exerciseDescription: ExerciseDescriptions.latPullDown),
+                                Exercise(exericiseName: "Dumbbell Curl",
+                                          imageName: ExerciseName.dumbbellCurl,
+                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true,
+                                         exerciseDescription: ExerciseDescriptions.dumbbellCurl),
+                                Exercise(exericiseName: "Chest Press",
+                                          imageName: ExerciseName.chestPress,
+                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true,
+                                         exerciseDescription: ExerciseDescriptions.chestPress),
                                 Exercise(exericiseName: "Crunches",
                                           imageName: ExerciseName.crunches,
-                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true),
-                                Exercise(exericiseName: "Lunges",
-                                          imageName: ExerciseName.lunges,
-                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true),
-                                Exercise(exericiseName: "Leg extension",
-                                          imageName: ExerciseName.legExtension,
-                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true),
-                                Exercise(exericiseName: "Shoulder Press",
-                                          imageName: ExerciseName.shoulderPress,
-                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true),
+                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true,
+                                         exerciseDescription: ExerciseDescriptions.crunches),
+                                Exercise(exericiseName: "Concentration Dumbbell Curl",
+                                          imageName: ExerciseName.concentrationCurl,
+                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true,
+                                         exerciseDescription: ExerciseDescriptions.concentrationCurl),
                                 Exercise(exericiseName: "Pull ups",
-                                          imageName: ExerciseName.pullups,
-                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true),
-                                Exercise(exericiseName: "Squates",
+                                          imageName: ExerciseName.pullUps,
+                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true,
+                                         exerciseDescription: ExerciseDescriptions.pullUps),
+                                Exercise(exericiseName: "Push Ups",
+                                          imageName: ExerciseName.pushUps,
+                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true,
+                                         exerciseDescription: ExerciseDescriptions.pushUps),
+                                Exercise(exericiseName: "Squat",
                                           imageName: ExerciseName.squat,
-                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true),
-                                Exercise(exericiseName: "T Bar Row",
-                                          imageName: ExerciseName.tBarRow,
-                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true),
-                                Exercise(exericiseName: "Barberll curl",
-                                          imageName: ExerciseName.barbellCurl,
-                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true),
-                                Exercise(exericiseName: "Barberll curl",
-                                          imageName: ExerciseName.barbellCurl,
-                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true),
-                                Exercise(exericiseName: "Barberll curl",
-                                          imageName: ExerciseName.barbellCurl,
-                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true)]
+                                          repetition: 5, set: 3, weight: 10, isExerciseOn: true,
+                                         exerciseDescription: ExerciseDescriptions.squat)]
             UserDefaultManager.shared.saveExerciseList(exerciseList: exerciseList) { success in
                 print("exercise list saved successfully")
             }

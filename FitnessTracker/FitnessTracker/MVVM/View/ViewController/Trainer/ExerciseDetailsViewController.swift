@@ -44,18 +44,15 @@ class ExerciseDetailsViewController: UIViewController, UINavigationControllerDel
     }
     
     func configureViews() {
-        if let image = UIImage(named: exercise.imageName) {
-            imageView.image = image
-            if let url =  Bundle.main.url(forResource: "crunches", withExtension: "gif"),
-               let imageData = try? Data(contentsOf: url),
-            let gifImage = UIImage.gifImageWithData(imageData) {
-                imageView.image = gifImage
-            }
-
+        if let url =  Bundle.main.url(forResource:  exercise.imageName, withExtension: "gif"),
+           let imageData = try? Data(contentsOf: url),
+           let gifImage = UIImage.gifImageWithData(imageData) {
+            imageView.image = gifImage
         } else {
             imageView.image = UIImage(systemName: "camera.fill")
         }
         title = exercise.exericiseName
+        exerciseNameTextField.text = exercise.exericiseName
         descriptionTextView.text = exercise.exerciseDescription
         if userType == .client {
             exerciseNameEditButton.isHidden = true

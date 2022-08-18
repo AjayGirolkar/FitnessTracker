@@ -40,6 +40,7 @@ extension UserLandingVC: UITableViewDelegate, UITableViewDataSource {
         if let exericise =  user.excerciseList?[indexPath.row] {
             tableViewCell.configureCell(exercise: exericise, userType: user.type, hideOnOffSwitch: user.type == .client)
         }
+        tableViewCell.selectionStyle = .none
         return tableViewCell
     }
     

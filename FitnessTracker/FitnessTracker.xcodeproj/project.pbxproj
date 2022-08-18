@@ -12,9 +12,17 @@
 		AB0C74B428A376FD00E25C75 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0C74B328A376FD00E25C75 /* Int+Extension.swift */; };
 		AB35A515288FA26A00A01272 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB35A514288FA26A00A01272 /* UIColor+Extension.swift */; };
 		AB594BE728A7B42E00F1FD9C /* Image+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB594BE628A7B42E00F1FD9C /* Image+GIF.swift */; };
-		AB594BEA28A7B51D00F1FD9C /* crunches.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB594BE928A7B51D00F1FD9C /* crunches.gif */; };
 		AB594BEC28ACAE9600F1FD9C /* AddExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB594BEB28ACAE9600F1FD9C /* AddExerciseTableViewController.swift */; };
 		AB594BEE28AD5D7A00F1FD9C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB594BED28AD5D7A00F1FD9C /* CardView.swift */; };
+		AB594BF828ADED6200F1FD9C /* pullUps.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB594BEF28ADED6200F1FD9C /* pullUps.gif */; };
+		AB594BF928ADED6200F1FD9C /* chestPress.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB594BF028ADED6200F1FD9C /* chestPress.gif */; };
+		AB594BFA28ADED6200F1FD9C /* pushUps.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB594BF128ADED6200F1FD9C /* pushUps.gif */; };
+		AB594BFB28ADED6200F1FD9C /* floorExcerise.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB594BF228ADED6200F1FD9C /* floorExcerise.gif */; };
+		AB594BFC28ADED6200F1FD9C /* concentrationCurl.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB594BF328ADED6200F1FD9C /* concentrationCurl.gif */; };
+		AB594BFD28ADED6200F1FD9C /* dumbbellCurl.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB594BF428ADED6200F1FD9C /* dumbbellCurl.gif */; };
+		AB594BFE28ADED6200F1FD9C /* squat.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB594BF528ADED6200F1FD9C /* squat.gif */; };
+		AB594BFF28ADED6200F1FD9C /* crunches.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB594BF628ADED6200F1FD9C /* crunches.gif */; };
+		AB594C0028ADED6200F1FD9C /* latPullDown.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB594BF728ADED6200F1FD9C /* latPullDown.gif */; };
 		AB5B1AB2289A28DB00345AEE /* ExerciseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B1AB1289A28DB00345AEE /* ExerciseDetailsViewController.swift */; };
 		AB5B1AB4289B954900345AEE /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B1AB3289B954900345AEE /* UIViewController+Extension.swift */; };
 		AB5B7473285D8272001F7DBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B7472285D8272001F7DBD /* AppDelegate.swift */; };
@@ -52,9 +60,17 @@
 		AB0C74B328A376FD00E25C75 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		AB35A514288FA26A00A01272 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		AB594BE628A7B42E00F1FD9C /* Image+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+GIF.swift"; sourceTree = "<group>"; };
-		AB594BE928A7B51D00F1FD9C /* crunches.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = crunches.gif; sourceTree = "<group>"; };
 		AB594BEB28ACAE9600F1FD9C /* AddExerciseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseTableViewController.swift; sourceTree = "<group>"; };
 		AB594BED28AD5D7A00F1FD9C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		AB594BEF28ADED6200F1FD9C /* pullUps.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pullUps.gif; sourceTree = "<group>"; };
+		AB594BF028ADED6200F1FD9C /* chestPress.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = chestPress.gif; sourceTree = "<group>"; };
+		AB594BF128ADED6200F1FD9C /* pushUps.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pushUps.gif; sourceTree = "<group>"; };
+		AB594BF228ADED6200F1FD9C /* floorExcerise.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = floorExcerise.gif; sourceTree = "<group>"; };
+		AB594BF328ADED6200F1FD9C /* concentrationCurl.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = concentrationCurl.gif; sourceTree = "<group>"; };
+		AB594BF428ADED6200F1FD9C /* dumbbellCurl.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dumbbellCurl.gif; sourceTree = "<group>"; };
+		AB594BF528ADED6200F1FD9C /* squat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = squat.gif; sourceTree = "<group>"; };
+		AB594BF628ADED6200F1FD9C /* crunches.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = crunches.gif; path = "../../../../../../../../Downloads/Shrey's /GIF/crunches.gif"; sourceTree = "<group>"; };
+		AB594BF728ADED6200F1FD9C /* latPullDown.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = latPullDown.gif; sourceTree = "<group>"; };
 		AB5B1AB1289A28DB00345AEE /* ExerciseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailsViewController.swift; sourceTree = "<group>"; };
 		AB5B1AB3289B954900345AEE /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		AB5B746F285D8272001F7DBD /* FitnessTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,7 +118,15 @@
 		AB594BE828A7B51400F1FD9C /* GIF */ = {
 			isa = PBXGroup;
 			children = (
-				AB594BE928A7B51D00F1FD9C /* crunches.gif */,
+				AB594BF728ADED6200F1FD9C /* latPullDown.gif */,
+				AB594BF428ADED6200F1FD9C /* dumbbellCurl.gif */,
+				AB594BF028ADED6200F1FD9C /* chestPress.gif */,
+				AB594BF628ADED6200F1FD9C /* crunches.gif */,
+				AB594BF328ADED6200F1FD9C /* concentrationCurl.gif */,
+				AB594BF228ADED6200F1FD9C /* floorExcerise.gif */,
+				AB594BEF28ADED6200F1FD9C /* pullUps.gif */,
+				AB594BF128ADED6200F1FD9C /* pushUps.gif */,
+				AB594BF528ADED6200F1FD9C /* squat.gif */,
 			);
 			path = GIF;
 			sourceTree = "<group>";
@@ -331,14 +355,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB84D10A286D593F00D2A68A /* Trainer.storyboard in Resources */,
+				AB594BFE28ADED6200F1FD9C /* squat.gif in Resources */,
+				AB594BFC28ADED6200F1FD9C /* concentrationCurl.gif in Resources */,
 				ABEDCB4328695D0C001DACE8 /* MyUserList.xib in Resources */,
+				AB594BFB28ADED6200F1FD9C /* floorExcerise.gif in Resources */,
 				AB0C74AA28A364BE00E25C75 /* ReviewViewController.xib in Resources */,
+				AB594BFD28ADED6200F1FD9C /* dumbbellCurl.gif in Resources */,
 				AB0C74B228A3733400E25C75 /* ExerciseDetailsViewController.xib in Resources */,
 				AB84D108286D593300D2A68A /* User.storyboard in Resources */,
+				AB594BFF28ADED6200F1FD9C /* crunches.gif in Resources */,
 				AB5B7482285D8274001F7DBD /* LaunchScreen.storyboard in Resources */,
+				AB594BF928ADED6200F1FD9C /* chestPress.gif in Resources */,
 				AB5B747F285D8274001F7DBD /* Assets.xcassets in Resources */,
+				AB594C0028ADED6200F1FD9C /* latPullDown.gif in Resources */,
 				ABFDD42F287FCC4100407570 /* ExerciseTableViewCell.xib in Resources */,
-				AB594BEA28A7B51D00F1FD9C /* crunches.gif in Resources */,
+				AB594BF828ADED6200F1FD9C /* pullUps.gif in Resources */,
+				AB594BFA28ADED6200F1FD9C /* pushUps.gif in Resources */,
 				ABFDD423287AE55300407570 /* TrainerTableViewCell.xib in Resources */,
 				AB5B747A285D8272001F7DBD /* Main.storyboard in Resources */,
 			);

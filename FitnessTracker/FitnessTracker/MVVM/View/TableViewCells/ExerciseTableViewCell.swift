@@ -32,7 +32,11 @@ class ExerciseTableViewCell: UITableViewCell {
     
     func configureCell(exercise: Exercise, userType: UserType, hideOnOffSwitch: Bool = false) {
         exerciseName.text = exercise.exericiseName
-        exerciseImageView.image = UIImage(named: exercise.imageName)
+        if let url =  Bundle.main.url(forResource:  exercise.imageName, withExtension: "gif"),
+           let imageData = try? Data(contentsOf: url),
+           let gifImage = UIImage.gifImageWithData(imageData) {
+            exerciseImageView.image = gifImage
+        }
         repsCountLabel.text = exercise.repetition.toString()
         weightLabel.text = exercise.weight.toString()
         onOffSegmentController.selectedSegmentIndex = exercise.isExerciseOn ? 0 : 1

@@ -34,10 +34,10 @@ class ReviewViewController: UIViewController {
     func configureViewForUser() {
         if user.type == .client {
             trainerMessageEditButton.isUserInteractionEnabled = false
-            trainerMessageEditButton.setImage(Image.lockImage, for: .normal)
+            trainerMessageEditButton.setImage(ImageName.lockImage, for: .normal)
         } else {
             clientMessageEditButton.isUserInteractionEnabled = false
-            clientMessageEditButton.setImage(Image.lockImage, for: .normal)
+            clientMessageEditButton.setImage(ImageName.lockImage, for: .normal)
         }
     }
     
@@ -46,10 +46,10 @@ class ReviewViewController: UIViewController {
         
         if isClientMessageEditModeOn {
             clientMessageTextView.isUserInteractionEnabled = true
-            clientMessageEditButton.setImage(Image.doneImage, for: .normal)
+            clientMessageEditButton.setImage(ImageName.doneImage, for: .normal)
         } else {
             clientMessageTextView.isUserInteractionEnabled = false
-            clientMessageEditButton.setImage(Image.pencil, for: .normal)
+            clientMessageEditButton.setImage(ImageName.pencil, for: .normal)
         }
     }
     
@@ -58,10 +58,10 @@ class ReviewViewController: UIViewController {
         
         if isTrainerMessageEditModeOn {
             trainerMessageTextView.isUserInteractionEnabled = true
-            trainerMessageEditButton.setImage(Image.doneImage, for: .normal)
+            trainerMessageEditButton.setImage(ImageName.doneImage, for: .normal)
         } else {
             trainerMessageTextView.isUserInteractionEnabled = false
-            trainerMessageEditButton.setImage(Image.pencil, for: .normal)
+            trainerMessageEditButton.setImage(ImageName.pencil, for: .normal)
         }
     }
     

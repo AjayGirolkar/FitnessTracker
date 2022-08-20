@@ -69,26 +69,21 @@ class SignUpViewController: UIViewController {
                             password: password,
                             type: userType,
                             age: nil,
-                            clientModel: nil)
+                            clientList: userType == .trainer ? [] : nil)
             
             UserDefaultManager.shared.trySavingUser(user: user) { success in
                 if success {
-                    showAlertView(title: "Success!", message: "User is added")
-                    validateEmailErrorLabel.isHidden = true
-                    confirmPasswordErrorLabel.isHidden = true
+                    self.showAlertView(title: "Success!", message: "User is added", primaryButtonText: "Ok", primaryButtonAction:  {
+                        self.dismiss(animated: true)
+                        self.navigationController?.popViewController(animated: true)
+                    })
+                    self.validateEmailErrorLabel.isHidden = true
+                    self.confirmPasswordErrorLabel.isHidden = true
                 } else {
-                    showAlertView(title: "Failed!", message: "Faile to save user")
+                    self.showAlertView(title: "Failed!", message: "Faile to save user", primaryButtonText: "Ok")
                 }
             }
         }
-    }
-    
-    func showAlertView(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            self.navigationController?.popViewController(animated: true)
-        }))
-        self.present(alert, animated: true, completion: nil)
     }
 }
 

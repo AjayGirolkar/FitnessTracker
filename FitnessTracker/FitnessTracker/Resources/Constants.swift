@@ -8,13 +8,11 @@
 import Foundation
 import UIKit
 
-struct Image {
+struct ImageName {
     static let pencil = UIImage(systemName: "pencil")
     static let lockImage = UIImage(systemName: "lock.fill")
     static let doneImage = UIImage(systemName: "checkmark.circle")
 }
-
-
 
 
 struct ExerciseName {

@@ -38,7 +38,7 @@
                                     <color key="baseBackgroundColor" systemColor="systemGray2Color"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="addClientButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="wfs-Mu-ACU"/>
+                                    <segue destination="0ap-rU-dE1" kind="show" identifier="AddClientViewControllerIdentfier" id="l9J-jf-qqa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -96,6 +96,99 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1034.7826086956522" y="79.6875"/>
+        </scene>
+        <!--Add Client View Controller-->
+        <scene sceneID="qPq-gU-fTe">
+            <objects>
+                <viewController storyboardIdentifier="AddClientViewController" id="0ap-rU-dE1" customClass="AddClientViewController" customModule="FitnessTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j4o-Zt-Bhe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="va7-Yz-qIp">
+                                <rect key="frame" x="10" y="142" width="394" height="644"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="0ap-rU-dE1" id="vlT-za-B7G"/>
+                                    <outlet property="delegate" destination="0ap-rU-dE1" id="2oi-Ze-0el"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMK-sV-aNA">
+                                <rect key="frame" x="20" y="806" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gsM-Pc-aEC"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="o3g-gB-tU9"/>
+                                </constraints>
+                                <color key="tintColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" subtitle="" cornerStyle="capsule">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="ADD EXERCISE +">
+                                            <attributes>
+                                                <font key="NSFont" size="14" name="Helvetica-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseBackgroundColor" systemColor="systemGray2Color"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addExerciseButtonAction:" destination="0ap-rU-dE1" eventType="touchUpInside" id="BcE-ag-Yn1"/>
+                                    <action selector="addExerciseButtonAction:" destination="uF6-qs-pUk" eventType="touchUpInside" id="iVE-H5-CMW"/>
+                                </connections>
+                            </button>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="6hY-rJ-Hw1">
+                                <rect key="frame" x="10" y="98" width="414" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="W7e-pg-mSe"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="0ap-rU-dE1" id="ejK-qh-1Rc"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hfn-ja-YIk"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="hfn-ja-YIk" firstAttribute="trailing" secondItem="va7-Yz-qIp" secondAttribute="trailing" constant="10" id="Fia-k1-DUY"/>
+                            <constraint firstItem="6hY-rJ-Hw1" firstAttribute="top" secondItem="hfn-ja-YIk" secondAttribute="top" constant="10" id="PvW-yA-Rqy"/>
+                            <constraint firstItem="va7-Yz-qIp" firstAttribute="leading" secondItem="hfn-ja-YIk" secondAttribute="leading" constant="10" id="Wyn-uV-cNs"/>
+                            <constraint firstItem="hfn-ja-YIk" firstAttribute="trailing" secondItem="YMK-sV-aNA" secondAttribute="trailing" constant="20" id="bLh-qG-Nku"/>
+                            <constraint firstItem="hfn-ja-YIk" firstAttribute="bottom" secondItem="YMK-sV-aNA" secondAttribute="bottom" constant="16" id="jjh-DM-0de"/>
+                            <constraint firstItem="va7-Yz-qIp" firstAttribute="top" secondItem="6hY-rJ-Hw1" secondAttribute="bottom" id="nMg-c3-g7j"/>
+                            <constraint firstItem="YMK-sV-aNA" firstAttribute="top" secondItem="va7-Yz-qIp" secondAttribute="bottom" constant="20" id="tgT-02-pZe"/>
+                            <constraint firstItem="6hY-rJ-Hw1" firstAttribute="leading" secondItem="hfn-ja-YIk" secondAttribute="leading" constant="10" id="u0P-2C-HFp"/>
+                            <constraint firstItem="YMK-sV-aNA" firstAttribute="leading" secondItem="hfn-ja-YIk" secondAttribute="leading" constant="20" id="z8B-as-TXG"/>
+                            <constraint firstItem="6hY-rJ-Hw1" firstAttribute="trailing" secondItem="hfn-ja-YIk" secondAttribute="trailing" constant="10" id="zQT-FS-Usg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yc2-g6-cfd">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="LZO-Gu-nlX">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="xDU-Vy-l1Y">
+                                <rect key="frame" x="302" y="5" width="92" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonAction:" destination="0ap-rU-dE1" eventType="touchUpInside" id="8gG-kc-caH"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addClientTableView" destination="va7-Yz-qIp" id="Lt4-JV-50y"/>
+                        <outlet property="searchBar" destination="6hY-rJ-Hw1" id="0e5-fT-Ak8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FUQ-Vh-yKD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1034.7826086956522" y="767.41071428571422"/>
         </scene>
         <!--Client Detail View Controller-->
         <scene sceneID="21F-QL-Jqy">
@@ -241,6 +334,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addExerciseButton" destination="tc4-nx-QfO" id="Jjv-8f-HU0"/>
                         <outlet property="todoTableViewController" destination="MH0-xg-RZK" id="eVr-FV-PFJ"/>
                     </connections>
                 </viewController>

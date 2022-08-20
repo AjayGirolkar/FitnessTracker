@@ -9,13 +9,14 @@ import UIKit
 
 class ToDoViewController: UIViewController {
     
-    var clientModel: ClientModel
+    var exerciseList: [Exercise]?
     let userType: UserType
     
+    @IBOutlet weak var addExerciseButton: UIButton!
     @IBOutlet weak var todoTableViewController: UITableView!
     
-    required init?(coder: NSCoder, clientModel: ClientModel, userType: UserType = .trainer) {
-        self.clientModel = clientModel
+    required init?(coder: NSCoder, exerciseList: [Exercise]?, userType: UserType = .trainer) {
+        self.exerciseList = exerciseList
         self.userType = userType
         super.init(coder: coder)
     }
@@ -26,8 +27,17 @@ class ToDoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureInitialViews()
         todoTableViewController.register(UINib.init(nibName: "ExerciseTableViewCell", bundle: nil),
                                          forCellReuseIdentifier: "ExerciseTableViewCell")
+    }
+    
+    func configureInitialViews() {
+        if userType == .client {
+            addLogoutButton()
+            addExerciseButton.isHidden = true
+            todoTableViewController.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 30).isActive = true
+        }
     }
     
     @IBAction func addExerciseButtonAction(_ sender: Any) {
@@ -41,20 +51,20 @@ class ToDoViewController: UIViewController {
 
 extension ToDoViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return clientModel.exerciseList?.count ?? 5
+        return exerciseList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "ExerciseTableViewCell", for: indexPath) as? ExerciseTableViewCell else { return UITableViewCell() }
         tableViewCell.selectionStyle = .none
-        if let exericise =  clientModel.exerciseList?[indexPath.row] {
+        if let exericise =  exerciseList?[indexPath.row] {
             tableViewCell.configureCell(exercise: exericise, userType: userType, hideOnOffSwitch: userType == .client)
         }
         return tableViewCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let exercise = clientModel.exerciseList?[indexPath.row] {
+        if let exercise = exerciseList?[indexPath.row] {
             let exerciseDetailsViewController = ExerciseDetailsViewController(exercise: exercise, userType: userType)
             self.navigationController?.pushViewController(exerciseDetailsViewController, animated: true)
         }
@@ -63,7 +73,7 @@ extension ToDoViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension ToDoViewController: SelectExerciseDelegate {
     func userSelectedExercise(exercise: Exercise) {
-        clientModel.exerciseList?.append(exercise)
+        exerciseList?.append(exercise)
         self.todoTableViewController.reloadData()
     }
 }

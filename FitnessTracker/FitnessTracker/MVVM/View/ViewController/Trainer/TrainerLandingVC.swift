@@ -20,8 +20,10 @@ class TrainerLandingVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        user = SharedManager.shared.user
         self.navigationItem.title = "Trainer"
         navigationController?.navigationBar.prefersLargeTitles = true
+        trainerTableView.reloadData()
     }
     
     @IBAction func logoutButtonAction(_ sender: Any) {
@@ -30,10 +32,13 @@ class TrainerLandingVC: UIViewController {
         loginVC.modalPresentationStyle = .fullScreen
         self.navigationController?.present(loginVC, animated: true)
     }
-    @IBAction func addClientButtonAction(_ sender: Any) {
-        let newModel = ClientModel(name: "Enter details", age: nil)
-        user.clientModel?.append(newModel)
-        trainerTableView.reloadData()
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddClientViewControllerIdentfier" {
+            if let addClientViewController = segue.destination as? AddClientViewController {
+                 addClientViewController.addClientDelegate = self
+            }
+        }
     }
 }
 
@@ -41,19 +46,19 @@ class TrainerLandingVC: UIViewController {
 extension TrainerLandingVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return user.clientModel?.count ?? 0
+        return user.clientList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "TrainerTableViewCell", for: indexPath) as? TrainerTableViewCell else { return UITableViewCell() }
-        tableViewCell.trainerLabel.text = user.clientModel?[indexPath.row].name
+        tableViewCell.trainerLabel.text = user.clientList?[indexPath.row].name
         tableViewCell.selectionStyle = .none
         return tableViewCell
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let clientModel = user.clientModel?[indexPath.row] {
+        if let clientModel = user.clientList?[indexPath.row] {
             navigateToClientViewController(clientModel: clientModel)
         }
     }
@@ -61,10 +66,23 @@ extension TrainerLandingVC: UITableViewDataSource, UITableViewDelegate {
     func navigateToClientViewController(clientModel: ClientModel) {
         let trainerStoryBoard = UIStoryboard(name: "Trainer", bundle: .main)
         let clientDetailViewController = trainerStoryBoard.instantiateViewController(identifier: "ClientDetailViewController", creator: { coder -> ClientDetailViewController? in
-            ClientDetailViewController(coder: coder, clientModel: clientModel)
+            ClientDetailViewController(coder: coder, navigationTitle: clientModel.name,
+                                       exerciseList: clientModel.exerciseList,
+                                       userType: self.user.type)
         })
         
         self.navigationController?.pushViewController(clientDetailViewController, animated: true)
     }
     
+}
+
+extension TrainerLandingVC: AddClientDelegate {
+    
+    func updateClientModel(clientModel: ClientModel) {
+        user.clientList?.append(clientModel)
+        trainerTableView.reloadData()
+        UserDefaultManager.shared.trySavingUser(user: user) { success in
+            print("success")
+        }
+    }
 }

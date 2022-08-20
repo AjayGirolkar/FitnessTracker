@@ -26,14 +26,14 @@ class UserDefaultManager {
         return nil
     }
     
-    func trySavingUser(user: User, completion: (Bool) -> ()) {
+    func trySavingUser(user: User, completion: ((Bool) -> ())?) {
         do {
             let data = try JSONEncoder().encode(user)
             UserDefaults.standard.set(data, forKey: user.username)
-            completion(true)
+            completion?(true)
         } catch {
             print("Unable to Encode user (\(error))")
-            completion(false)
+            completion?(false)
         }
     }
     

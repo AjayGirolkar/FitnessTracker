@@ -28,4 +28,31 @@ extension UIViewController {
         view.endEditing(true)
     }
     
+    func addLogoutButton() {
+        let logoutButton = UIBarButtonItem(image: UIImage(systemName: "power"), style: .plain, target: self, action: #selector(logoutButtonAction))
+        self.navigationController?.navigationBar.topItem?.setRightBarButton(logoutButton, animated: true)
+    }
+    
+    @objc func logoutButtonAction() {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
+        loginVC.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(loginVC, animated: true)
+    }
+    
+    func showAlertView(title: String, message: String, primaryButtonText: String,
+                       primaryButtonAction: (() -> ())? = nil,
+                       secondaryButtonText: String? = nil, secondaryButtonAction: (() -> ())? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {_ in
+            primaryButtonAction?()
+        }))
+        if let secondaryButtonText = secondaryButtonText {
+            alert.addAction(UIAlertAction(title: secondaryButtonText, style: .default, handler: { action in
+                secondaryButtonAction?()
+            }))
+        }
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }

@@ -23,6 +23,11 @@
 		AB594BFE28ADED6200F1FD9C /* squat.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB594BF528ADED6200F1FD9C /* squat.gif */; };
 		AB594BFF28ADED6200F1FD9C /* crunches.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB594BF628ADED6200F1FD9C /* crunches.gif */; };
 		AB594C0028ADED6200F1FD9C /* latPullDown.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB594BF728ADED6200F1FD9C /* latPullDown.gif */; };
+		AB594C0228ADFDA800F1FD9C /* AddClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB594C0128ADFDA800F1FD9C /* AddClientViewController.swift */; };
+		AB594C0528ADFFE500F1FD9C /* ClientDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB594C0328ADFFE500F1FD9C /* ClientDetailsTableViewCell.swift */; };
+		AB594C0628ADFFE500F1FD9C /* ClientDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB594C0428ADFFE500F1FD9C /* ClientDetailsTableViewCell.xib */; };
+		AB594C0B28AFD92F00F1FD9C /* SearchUserUTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB594C0928AFD92F00F1FD9C /* SearchUserUTableViewCell.swift */; };
+		AB594C0C28AFD92F00F1FD9C /* SearchUserUTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB594C0A28AFD92F00F1FD9C /* SearchUserUTableViewCell.xib */; };
 		AB5B1AB2289A28DB00345AEE /* ExerciseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B1AB1289A28DB00345AEE /* ExerciseDetailsViewController.swift */; };
 		AB5B1AB4289B954900345AEE /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B1AB3289B954900345AEE /* UIViewController+Extension.swift */; };
 		AB5B7473285D8272001F7DBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B7472285D8272001F7DBD /* AppDelegate.swift */; };
@@ -71,6 +76,11 @@
 		AB594BF528ADED6200F1FD9C /* squat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = squat.gif; sourceTree = "<group>"; };
 		AB594BF628ADED6200F1FD9C /* crunches.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = crunches.gif; path = "../../../../../../../../Downloads/Shrey's /GIF/crunches.gif"; sourceTree = "<group>"; };
 		AB594BF728ADED6200F1FD9C /* latPullDown.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = latPullDown.gif; sourceTree = "<group>"; };
+		AB594C0128ADFDA800F1FD9C /* AddClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientViewController.swift; sourceTree = "<group>"; };
+		AB594C0328ADFFE500F1FD9C /* ClientDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		AB594C0428ADFFE500F1FD9C /* ClientDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClientDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		AB594C0928AFD92F00F1FD9C /* SearchUserUTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserUTableViewCell.swift; sourceTree = "<group>"; };
+		AB594C0A28AFD92F00F1FD9C /* SearchUserUTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchUserUTableViewCell.xib; sourceTree = "<group>"; };
 		AB5B1AB1289A28DB00345AEE /* ExerciseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailsViewController.swift; sourceTree = "<group>"; };
 		AB5B1AB3289B954900345AEE /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		AB5B746F285D8272001F7DBD /* FitnessTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +183,7 @@
 			children = (
 				ABFDD426287BD9E500407570 /* ClientModel.swift */,
 				ABAEDB5B2895793D00B2FADF /* SharedManager.swift */,
+				ABAEDB60289586D600B2FADF /* UserDefaultManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,6 +259,7 @@
 				ABFDD42A287E7E1900407570 /* ReviewViewController.swift */,
 				AB5B1AB1289A28DB00345AEE /* ExerciseDetailsViewController.swift */,
 				AB594BEB28ACAE9600F1FD9C /* AddExerciseTableViewController.swift */,
+				AB594C0128ADFDA800F1FD9C /* AddClientViewController.swift */,
 			);
 			path = Trainer;
 			sourceTree = "<group>";
@@ -259,6 +271,10 @@
 				ABFDD421287AE55300407570 /* TrainerTableViewCell.xib */,
 				ABFDD42C287FCC4100407570 /* ExerciseTableViewCell.swift */,
 				ABFDD42D287FCC4100407570 /* ExerciseTableViewCell.xib */,
+				AB594C0328ADFFE500F1FD9C /* ClientDetailsTableViewCell.swift */,
+				AB594C0428ADFFE500F1FD9C /* ClientDetailsTableViewCell.xib */,
+				AB594C0928AFD92F00F1FD9C /* SearchUserUTableViewCell.swift */,
+				AB594C0A28AFD92F00F1FD9C /* SearchUserUTableViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -267,7 +283,6 @@
 			isa = PBXGroup;
 			children = (
 				ABAEDB5E28957BD100B2FADF /* EmailValidator.swift */,
-				ABAEDB60289586D600B2FADF /* UserDefaultManager.swift */,
 				AB594BED28AD5D7A00F1FD9C /* CardView.swift */,
 			);
 			path = Helper;
@@ -369,7 +384,9 @@
 				AB5B747F285D8274001F7DBD /* Assets.xcassets in Resources */,
 				AB594C0028ADED6200F1FD9C /* latPullDown.gif in Resources */,
 				ABFDD42F287FCC4100407570 /* ExerciseTableViewCell.xib in Resources */,
+				AB594C0628ADFFE500F1FD9C /* ClientDetailsTableViewCell.xib in Resources */,
 				AB594BF828ADED6200F1FD9C /* pullUps.gif in Resources */,
+				AB594C0C28AFD92F00F1FD9C /* SearchUserUTableViewCell.xib in Resources */,
 				AB594BFA28ADED6200F1FD9C /* pushUps.gif in Resources */,
 				ABFDD423287AE55300407570 /* TrainerTableViewCell.xib in Resources */,
 				AB5B747A285D8272001F7DBD /* Main.storyboard in Resources */,
@@ -389,8 +406,10 @@
 				AB35A515288FA26A00A01272 /* UIColor+Extension.swift in Sources */,
 				AB5F8FF2285D8753009C4D43 /* LoginViewController.swift in Sources */,
 				ABFDD42B287E7E1900407570 /* ReviewViewController.swift in Sources */,
+				AB594C0528ADFFE500F1FD9C /* ClientDetailsTableViewCell.swift in Sources */,
 				ABAEDB61289586D600B2FADF /* UserDefaultManager.swift in Sources */,
 				AB5B1AB4289B954900345AEE /* UIViewController+Extension.swift in Sources */,
+				AB594C0228ADFDA800F1FD9C /* AddClientViewController.swift in Sources */,
 				AB5B7477285D8272001F7DBD /* ViewController.swift in Sources */,
 				AB0C74B428A376FD00E25C75 /* Int+Extension.swift in Sources */,
 				AB84D10E286D5A8200D2A68A /* UserLandingVC.swift in Sources */,
@@ -403,6 +422,7 @@
 				AB5B1AB2289A28DB00345AEE /* ExerciseDetailsViewController.swift in Sources */,
 				AB5B7473285D8272001F7DBD /* AppDelegate.swift in Sources */,
 				AB5B7475285D8272001F7DBD /* SceneDelegate.swift in Sources */,
+				AB594C0B28AFD92F00F1FD9C /* SearchUserUTableViewCell.swift in Sources */,
 				AB594BEE28AD5D7A00F1FD9C /* CardView.swift in Sources */,
 				AB84D110286D5A9000D2A68A /* TrainerLandingVC.swift in Sources */,
 				ABAEDB5F28957BD100B2FADF /* EmailValidator.swift in Sources */,

@@ -65,17 +65,17 @@ class ExerciseDetailsViewController: UIViewController, UINavigationControllerDel
         if isExerciseEditModeOn {
             exerciseNameTextField.isUserInteractionEnabled = true
             exerciseNameEditButton.image(for: .normal)
-            exerciseNameEditButton.setImage(Image.doneImage, for: .normal)
+            exerciseNameEditButton.setImage(ImageName.doneImage, for: .normal)
         } else {
             exerciseNameTextField.isUserInteractionEnabled = false
-            exerciseNameEditButton.setImage(Image.pencil, for: .normal)
+            exerciseNameEditButton.setImage(ImageName.pencil, for: .normal)
         }
         if isDescriptionTextViewEditModeOn {
             descriptionTextView.isUserInteractionEnabled = true
-            descriptionEditButton.setImage(Image.doneImage, for: .normal)
+            descriptionEditButton.setImage(ImageName.doneImage, for: .normal)
         }else {
             descriptionTextView.isUserInteractionEnabled = false
-            descriptionEditButton.setImage(Image.pencil, for: .normal)
+            descriptionEditButton.setImage(ImageName.pencil, for: .normal)
         }
     }
     

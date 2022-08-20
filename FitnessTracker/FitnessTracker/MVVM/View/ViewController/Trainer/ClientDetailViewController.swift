@@ -9,8 +9,9 @@ import UIKit
 
 class ClientDetailViewController: UIViewController {
     
-    var clientModel: ClientModel
-    
+    var navigationTitle: String = ""
+    var exerciseList: [Exercise]?
+    let userType: UserType
     //ChilViewControllers
     var toDoViewController: ToDoViewController?
     var reviewViewController: ReviewViewController?
@@ -19,8 +20,10 @@ class ClientDetailViewController: UIViewController {
     @IBOutlet weak var reviewButton: UIButton!
     @IBOutlet weak var childViewContainer: UIView!
     
-    required init?(coder: NSCoder, clientModel: ClientModel) {
-        self.clientModel = clientModel
+    required init?(coder: NSCoder, navigationTitle: String,  exerciseList: [Exercise]?, userType: UserType) {
+        self.exerciseList = exerciseList
+        self.userType = userType
+        self.navigationTitle = navigationTitle
         super.init(coder: coder)
     }
     
@@ -35,7 +38,7 @@ class ClientDetailViewController: UIViewController {
         addToDoViewController()
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationItem.title = clientModel.name
+        self.navigationItem.title = navigationTitle
     }
     
     func initializeChildViewControllers() {
@@ -44,13 +47,13 @@ class ClientDetailViewController: UIViewController {
         let toDoVC = trainerStoryBoard.instantiateViewController(identifier: "ToDoViewController",
                                                                  creator: { coder -> ToDoViewController? in
             ToDoViewController(coder: coder,
-                               clientModel: self.clientModel)
+                               exerciseList: self.exerciseList,
+                               userType: self.userType)
         })
         
         reviewViewController = reviewVC
         toDoViewController = toDoVC
     }
-    
     
     
     //MARK: Button Action
@@ -76,7 +79,6 @@ class ClientDetailViewController: UIViewController {
         add(asChildViewController: reviewViewController)
         toDoButton.tintColor = .lightGray
         reviewButton.tintColor = UIColor(hex: "#64eb34")
-
     }
 }
 

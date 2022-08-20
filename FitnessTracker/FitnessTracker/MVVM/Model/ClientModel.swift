@@ -13,9 +13,9 @@ enum UserType: String, Codable {
 }
 
 struct ClientModel: Codable {
-    let name: String
-    let age: Int?
-    var imageName: String?
+    var name: String
+    var age: String?
+    var imageData: Data?
     var exerciseList: [Exercise]?
     var reviewModel: ReviewModel?
 }
@@ -41,9 +41,11 @@ struct User: Codable {
     let username: String
     let email: String
     let password: String
-    let type: UserType
+    var contactNumber: String = ""
+    var type: UserType
     let age: Int?
-    var clientModel: [ClientModel]?
+    var imageData: Data?
+    var clientList: [ClientModel]?
     var excerciseList: [Exercise]?
     var reviewModel: ReviewModel?
 }

@@ -11,12 +11,14 @@ class ToDoViewController: UIViewController {
     
     var exerciseList: [Exercise]?
     let userType: UserType
+    var clientModel: ClientModel?
     
     @IBOutlet weak var addExerciseButton: UIButton!
     @IBOutlet weak var todoTableViewController: UITableView!
     
-    required init?(coder: NSCoder, exerciseList: [Exercise]?, userType: UserType = .trainer) {
+    required init?(coder: NSCoder, clientModel: ClientModel?, exerciseList: [Exercise]?, userType: UserType = .trainer) {
         self.exerciseList = exerciseList
+        self.clientModel = clientModel
         self.userType = userType
         super.init(coder: coder)
     }
@@ -57,6 +59,7 @@ extension ToDoViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "ExerciseTableViewCell", for: indexPath) as? ExerciseTableViewCell else { return UITableViewCell() }
         tableViewCell.selectionStyle = .none
+        tableViewCell.exerciseTableViewCellDelegate = self
         if let exericise =  exerciseList?[indexPath.row] {
             tableViewCell.configureCell(exercise: exericise, userType: userType, hideOnOffSwitch: userType == .client)
         }
@@ -65,15 +68,60 @@ extension ToDoViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let exercise = exerciseList?[indexPath.row] {
-            let exerciseDetailsViewController = ExerciseDetailsViewController(exercise: exercise, userType: userType)
+            let exerciseDetailsViewController = ExerciseDetailsViewController(exercise: exercise, userType: userType, clientModel: clientModel)
+            exerciseDetailsViewController.selectExerciseDelegate = self
             self.navigationController?.pushViewController(exerciseDetailsViewController, animated: true)
         }
     }
 }
 
-extension ToDoViewController: SelectExerciseDelegate {
+extension ToDoViewController: ExerciseDelegate {
     func userSelectedExercise(exercise: Exercise) {
         exerciseList?.append(exercise)
+        updateClientDetails()
+    }
+}
+
+extension ToDoViewController: ExerciseTableViewCellDelegate {
+    
+    func deleteExercise(exercise: Exercise) {
+        exerciseList = exerciseList?.filter{ $0.id != exercise.id}
+        updateClientDetails()
+    }
+    
+    func updateExercise(exercise: Exercise) {
+        exerciseList = exerciseList?.map({ exerciseModel in
+            if exercise.id == exerciseModel.id {
+                return exercise
+            }
+            return exerciseModel
+        })
+        updateClientDetails()
+    }
+    
+    func updateClientDetails() {
+        saveTrainerModel()
+        updateExerciseForClient()
         self.todoTableViewController.reloadData()
+        
+    }
+    
+    func saveTrainerModel(){
+        if var updatedClientModel = clientModel {
+            updatedClientModel.exerciseList = exerciseList
+            SharedManager.shared.user.clientList =  SharedManager.shared.user.clientList?.map({ clientModel in
+                if clientModel.name == self.clientModel?.name {
+                    return updatedClientModel
+                }
+                return clientModel
+            })
+            UserDefaultManager.shared.trySavingUser(user: SharedManager.shared.user, completion: nil)
+        }
+    }
+    func updateExerciseForClient() {
+        if var client = UserDefaultManager.shared.isUserAvailable(username: self.clientModel?.username ?? "") {
+            client.excerciseList = exerciseList
+            UserDefaultManager.shared.trySavingUser(user: client, completion: nil)
+        }
     }
 }

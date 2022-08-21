@@ -19,7 +19,9 @@ class SharedManager {
         let reviewModel = ReviewModel(messageToUser: ["Hey Please follow exerise showing on your timeline"],
                                  messageFromUser: ["Sure, I am following those exerise. Its great!"])
         
-        let clientList = [ClientModel(name: "Shrey", age: "20",
+        let clientList = [ClientModel(name: "Shrey",
+                                      username: "shrey@gmail.com",
+                                      age: "20",
                                       exerciseList: exerciseList,
                                       reviewModel: reviewModel),
                           ClientModel(name: "Ajay", age: "29",

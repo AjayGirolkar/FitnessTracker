@@ -396,8 +396,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="power" catalog="system" width="128" height="124"/>
+        <image name="person.circle.fill" catalog="system" width="32" height="32"/>
+        <image name="power" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

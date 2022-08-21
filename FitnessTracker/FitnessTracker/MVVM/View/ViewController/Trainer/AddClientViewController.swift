@@ -55,6 +55,7 @@ class AddClientViewController: UIViewController {
         
         if !isUserAlreadyPresent {
             clientModel.name = newUserToAdd.name
+            clientModel.username = newUserToAdd.username
             clientModel.age = newUserToAdd.age?.toString()
             clientModel.imageData = newUserToAdd.imageData
             clientModel.reviewModel = newUserToAdd.reviewModel
@@ -120,6 +121,7 @@ extension AddClientViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             guard let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "ExerciseTableViewCell", for: indexPath) as? ExerciseTableViewCell else { return UITableViewCell() }
             tableViewCell.selectionStyle = .none
+            tableViewCell.exerciseTableViewCellDelegate = self
             if let exerciseList = clientModel.exerciseList, exerciseList.count > indexPath.row {
                 let exericise = exerciseList[indexPath.row]
                 tableViewCell.configureCell(exercise: exericise, userType: user.type, hideOnOffSwitch: user.type == .client)
@@ -132,7 +134,8 @@ extension AddClientViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let exerciseList = clientModel.exerciseList, exerciseList.count > indexPath.row {
             let exercise = exerciseList[indexPath.row]
-            let exerciseDetailsViewController = ExerciseDetailsViewController(exercise: exercise, userType: user.type)
+            let exerciseDetailsViewController = ExerciseDetailsViewController(exercise: exercise, userType: user.type, clientModel: clientModel)
+            exerciseDetailsViewController.selectExerciseDelegate = self
             self.navigationController?.pushViewController(exerciseDetailsViewController, animated: true)
         }
     }
@@ -146,9 +149,26 @@ extension AddClientViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension AddClientViewController: SelectExerciseDelegate {
+extension AddClientViewController: ExerciseDelegate {
+    func updateExercise(exercise: Exercise) {
+        clientModel.exerciseList =  clientModel.exerciseList?.map({ exerciseModel in
+            if exerciseModel.id == exerciseModel.id {
+                return exercise
+            }
+            return exerciseModel
+        })
+        self.addClientTableView.reloadData()
+    }
+    
     func userSelectedExercise(exercise: Exercise) {
         clientModel.exerciseList?.append(exercise)
+        self.addClientTableView.reloadData()
+    }
+}
+
+extension AddClientViewController: ExerciseTableViewCellDelegate {
+    func deleteExercise(exercise: Exercise) {
+        clientModel.exerciseList = clientModel.exerciseList?.filter{ $0.id != exercise.id}
         self.addClientTableView.reloadData()
     }
 }

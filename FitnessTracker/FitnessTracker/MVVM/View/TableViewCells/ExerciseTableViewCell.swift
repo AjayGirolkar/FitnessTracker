@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ExerciseTableViewCellDelegate: AnyObject {
+    func deleteExercise(exercise: Exercise)
+}
+
 class ExerciseTableViewCell: UITableViewCell {
     
     @IBOutlet weak var exerciseImageView: UIImageView!
@@ -16,6 +20,9 @@ class ExerciseTableViewCell: UITableViewCell {
     @IBOutlet weak var repsCountLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var numberOfSetsLabel: UIStackView!
+    @IBOutlet weak var deleteButton: UIButton!
+    var exercise: Exercise? = nil
+    weak var exerciseTableViewCellDelegate: ExerciseTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,15 +38,22 @@ class ExerciseTableViewCell: UITableViewCell {
     }
     
     func configureCell(exercise: Exercise, userType: UserType, hideOnOffSwitch: Bool = false) {
+        self.exercise = exercise
         exerciseName.text = exercise.exericiseName
-        if let url =  Bundle.main.url(forResource:  exercise.imageName, withExtension: "gif"),
+        if !exercise.imageName.isEmpty,
+           let url =  Bundle.main.url(forResource:  exercise.imageName, withExtension: "gif"),
            let imageData = try? Data(contentsOf: url),
            let gifImage = UIImage.gifImageWithData(imageData) {
             exerciseImageView.image = gifImage
+        } else if let imageData = exercise.imageData {
+            exerciseImageView.image = UIImage(data: imageData)
+        }  else {
+            exerciseImageView.image = UIImage(systemName: "person.crop.circle.badge.questionmark.fill")
         }
         repsCountLabel.text = exercise.repetition.toString()
         weightLabel.text = exercise.weight.toString()
         onOffSegmentController.selectedSegmentIndex = exercise.isExerciseOn ? 0 : 1
+        deleteButton.isHidden = userType == .client
         onOffSegmentController.isHidden = hideOnOffSwitch
     }
     @IBAction func segmentoControllerAction(_ sender: Any) {
@@ -49,5 +63,9 @@ class ExerciseTableViewCell: UITableViewCell {
             onOffSegmentController.selectedSegmentTintColor = .lightGray
         }
     }
-    
+    @IBAction func deleteButtonAction(_ sender: Any) {
+        if let exercise = exercise {
+            exerciseTableViewCellDelegate?.deleteExercise(exercise: exercise)
+        }
+    }
 }

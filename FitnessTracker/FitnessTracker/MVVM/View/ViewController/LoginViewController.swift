@@ -34,15 +34,17 @@ class LoginViewController: UIViewController {
     
     @IBAction func singInAsUserAction(_ sender: Any) {
         if authenticateUser() {
+            SharedManager.shared.user.type = .client
+            user = SharedManager.shared.user
             if let user = user {
                 let trainerStoryBoard = UIStoryboard(name: "Trainer", bundle: .main)
                 let clientDetailViewController = trainerStoryBoard.instantiateViewController(identifier: "ClientDetailViewController", creator: { coder -> ClientDetailViewController? in
                     let title = "Welcome, \(user.name)"
                     return ClientDetailViewController(coder: coder, navigationTitle: title,
                                                       exerciseList: user.excerciseList,
+                                                      clientModel: nil,
                                                       userType: user.type)
                 })
-                SharedManager.shared.user.type = .client
                 let navViewController = UINavigationController(rootViewController: clientDetailViewController)
                 navViewController.modalPresentationStyle = .fullScreen
                 self.present(navViewController, animated: true, completion: nil)
@@ -52,12 +54,12 @@ class LoginViewController: UIViewController {
     
     @IBAction func singInAsTrainerAction(_ sender: Any) {
         if authenticateUser() {
+            SharedManager.shared.user.type = .trainer
             let trainerStoryBoard: UIStoryboard = UIStoryboard(name: "Trainer", bundle: nil)
             let newViewController = trainerStoryBoard.instantiateViewController(withIdentifier: "TrainerLandingVC") as! TrainerLandingVC
             let navViewController = UINavigationController(rootViewController: newViewController)
             navViewController.modalPresentationStyle = .fullScreen
             self.present(navViewController, animated: true, completion: nil)
-            SharedManager.shared.user.type = .trainer
         }
     }
 }

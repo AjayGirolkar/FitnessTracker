@@ -15,18 +15,11 @@ class UserLandingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addLogoutButton()
         self.navigationItem.title = "Timeline"
         navigationController?.navigationBar.prefersLargeTitles = true
         userLandingTableView.register(UINib.init(nibName: "ExerciseTableViewCell", bundle: nil), forCellReuseIdentifier: "ExerciseTableViewCell")
     }
-    
-    @IBAction func logoutButtonAction(_ sender: Any) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
-        loginVC.modalPresentationStyle = .fullScreen
-        self.navigationController?.present(loginVC, animated: true)
-    }
-
 }
 
 extension UserLandingVC: UITableViewDelegate, UITableViewDataSource {

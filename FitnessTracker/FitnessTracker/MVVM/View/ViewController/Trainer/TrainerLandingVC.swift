@@ -68,6 +68,7 @@ extension TrainerLandingVC: UITableViewDataSource, UITableViewDelegate {
         let clientDetailViewController = trainerStoryBoard.instantiateViewController(identifier: "ClientDetailViewController", creator: { coder -> ClientDetailViewController? in
             ClientDetailViewController(coder: coder, navigationTitle: clientModel.name,
                                        exerciseList: clientModel.exerciseList,
+                                       clientModel: clientModel,
                                        userType: self.user.type)
         })
         

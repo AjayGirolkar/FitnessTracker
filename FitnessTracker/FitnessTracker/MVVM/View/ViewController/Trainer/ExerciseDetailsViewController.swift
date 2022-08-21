@@ -22,10 +22,13 @@ class ExerciseDetailsViewController: UIViewController, UINavigationControllerDel
     @IBOutlet weak var descriptionEditButton: UIButton!
     var exercise: Exercise
     let userType: UserType
+    var clientModel: ClientModel?
+    weak var selectExerciseDelegate: ExerciseDelegate?
     
-    init(exercise: Exercise, userType: UserType) {
+    init(exercise: Exercise, userType: UserType, clientModel: ClientModel? = nil) {
         self.exercise = exercise
         self.userType = userType
+        self.clientModel = clientModel
         super.init(nibName: "ExerciseDetailsViewController", bundle: nil)
     }
     
@@ -38,18 +41,31 @@ class ExerciseDetailsViewController: UIViewController, UINavigationControllerDel
         picker.allowsEditing = true
         picker.delegate = self
         updateNavigationBar()
-        configureViews() 
+        configureViews()
         updateEditCondition()
         addDismissKeyboardAction()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if userType == .trainer {
+            addSaveButton()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = nil
+    }
+    
     func configureViews() {
-        if let url =  Bundle.main.url(forResource:  exercise.imageName, withExtension: "gif"),
+        if !exercise.imageName.isEmpty,
+           let url =  Bundle.main.url(forResource:  exercise.imageName, withExtension: "gif"),
            let imageData = try? Data(contentsOf: url),
            let gifImage = UIImage.gifImageWithData(imageData) {
             imageView.image = gifImage
+        } else if let imageData = exercise.imageData {
+            imageView.image = UIImage(data: imageData)
         } else {
-            imageView.image = UIImage(systemName: "camera.fill")
+            imageView.image = UIImage(systemName: "person.crop.circle.badge.questionmark.fill")
         }
         title = exercise.exericiseName
         exerciseNameTextField.text = exercise.exericiseName
@@ -60,6 +76,42 @@ class ExerciseDetailsViewController: UIViewController, UINavigationControllerDel
         }
     }
     
+    func addSaveButton() {
+        let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveButtonAction))
+        self.navigationItem.rightBarButtonItem = saveButton
+    }
+    
+    @objc func saveButtonAction() {
+        exercise.exericiseName = exerciseNameTextField.text ?? ""
+        exercise.exerciseDescription = descriptionTextView.text
+        exercise.imageData = imageView.image?.pngData()
+        saveTrainerModel()
+    }
+    
+    func saveTrainerModel(){
+        if var updatedClientModel = clientModel {
+            updatedClientModel.exerciseList = clientModel?.exerciseList?.map({ exerciseDetail in
+                if exerciseDetail.id == self.exercise.id {
+                    return self.exercise
+                }
+                return exerciseDetail
+            })
+            SharedManager.shared.user.clientList =  SharedManager.shared.user.clientList?.map({ clientModel in
+                if clientModel.name == updatedClientModel.name {
+                    return updatedClientModel
+                }
+                return clientModel
+            })
+            UserDefaultManager.shared.trySavingUser(user: SharedManager.shared.user, completion: { success in
+                if success {
+                    self.showAlertView(title: "Success", message: "Saved changes", primaryButtonText: "Ok", primaryButtonAction:  {
+                        self.selectExerciseDelegate?.updateExercise(exercise: self.exercise)
+                        self.navigationController?.popViewController(animated: true)
+                    })
+                }
+            })
+        }
+    }
     
     func updateEditCondition() {
         if isExerciseEditModeOn {

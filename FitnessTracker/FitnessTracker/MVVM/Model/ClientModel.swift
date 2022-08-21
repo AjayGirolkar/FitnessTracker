@@ -14,6 +14,7 @@ enum UserType: String, Codable {
 
 struct ClientModel: Codable {
     var name: String
+    var username: String = ""
     var age: String?
     var imageData: Data?
     var exerciseList: [Exercise]?
@@ -21,8 +22,10 @@ struct ClientModel: Codable {
 }
 
 struct Exercise: Codable {
+    var id = UUID().uuidString
     var exericiseName: String
     var imageName: String = ""
+    var imageData: Data? = nil
     var repetition: Int
     var set: Int
     var weight: Int

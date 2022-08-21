@@ -12,6 +12,7 @@ class ClientDetailViewController: UIViewController {
     var navigationTitle: String = ""
     var exerciseList: [Exercise]?
     let userType: UserType
+    var clientModel: ClientModel?
     //ChilViewControllers
     var toDoViewController: ToDoViewController?
     var reviewViewController: ReviewViewController?
@@ -20,10 +21,12 @@ class ClientDetailViewController: UIViewController {
     @IBOutlet weak var reviewButton: UIButton!
     @IBOutlet weak var childViewContainer: UIView!
     
-    required init?(coder: NSCoder, navigationTitle: String,  exerciseList: [Exercise]?, userType: UserType) {
+    required init?(coder: NSCoder, navigationTitle: String,  exerciseList: [Exercise]?, clientModel: ClientModel?, userType: UserType) {
         self.exerciseList = exerciseList
         self.userType = userType
-        self.navigationTitle = navigationTitle
+        self.navigationTitle = clientModel?.name ?? navigationTitle
+        self.exerciseList = clientModel?.exerciseList ?? exerciseList
+        self.clientModel = clientModel
         super.init(coder: coder)
     }
     
@@ -33,6 +36,9 @@ class ClientDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if userType == .client {
+            addLogoutButton()
+        }
         updateNavigationBar()
         initializeChildViewControllers()
         addToDoViewController()
@@ -47,6 +53,7 @@ class ClientDetailViewController: UIViewController {
         let toDoVC = trainerStoryBoard.instantiateViewController(identifier: "ToDoViewController",
                                                                  creator: { coder -> ToDoViewController? in
             ToDoViewController(coder: coder,
+                               clientModel: self.clientModel,
                                exerciseList: self.exerciseList,
                                userType: self.userType)
         })

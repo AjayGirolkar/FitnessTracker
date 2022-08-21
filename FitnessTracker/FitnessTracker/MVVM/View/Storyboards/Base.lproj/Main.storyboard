@@ -677,7 +677,7 @@
                                 <constraints>
                                     <constraint firstItem="3Wi-CE-09m" firstAttribute="centerX" secondItem="ptD-Pm-dFw" secondAttribute="centerX" id="5dz-BN-Kqn"/>
                                     <constraint firstAttribute="trailing" secondItem="3Wi-CE-09m" secondAttribute="trailing" id="Qwx-9n-Cu3"/>
-                                    <constraint firstAttribute="bottom" secondItem="3Wi-CE-09m" secondAttribute="bottom" constant="-37" id="UFy-qC-WEb"/>
+                                    <constraint firstAttribute="bottom" secondItem="3Wi-CE-09m" secondAttribute="bottom" constant="20" id="UFy-qC-WEb"/>
                                     <constraint firstItem="3Wi-CE-09m" firstAttribute="leading" secondItem="ptD-Pm-dFw" secondAttribute="leading" id="bdV-nG-oH4"/>
                                     <constraint firstItem="3Wi-CE-09m" firstAttribute="top" secondItem="ECj-FE-ro6" secondAttribute="top" id="dbR-ih-diL"/>
                                 </constraints>

@@ -21,7 +21,7 @@ class TrainerLandingVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         user = SharedManager.shared.user
-        self.navigationItem.title = "Trainer"
+        self.navigationItem.title = user.name
         navigationController?.navigationBar.prefersLargeTitles = true
         trainerTableView.reloadData()
     }
@@ -61,6 +61,10 @@ extension TrainerLandingVC: UITableViewDataSource, UITableViewDelegate {
         if let clientModel = user.clientList?[indexPath.row] {
             navigateToClientViewController(clientModel: clientModel)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Client Details"
     }
     
     func navigateToClientViewController(clientModel: ClientModel) {

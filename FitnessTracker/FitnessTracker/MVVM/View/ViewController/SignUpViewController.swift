@@ -16,7 +16,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var validateEmailErrorLabel: UILabel!
     @IBOutlet weak var confirmPasswordErrorLabel: UILabel!
-    
+    @IBOutlet weak var userAgeTextField: UITextField!
+    @IBOutlet weak var userContactNumberTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,13 +63,16 @@ class SignUpViewController: UIViewController {
         if let name = nameTextField.text, !name.isEmpty,
            let username = usernameTextField.text, !username.isEmpty,
            let email = emailTextField.text, !email.isEmpty,
-           let password = passwordTextField.text, !password.isEmpty {
+           let password = passwordTextField.text, !password.isEmpty,
+           let age = userAgeTextField.text, !age.isEmpty,
+           let contactNumber = confirmPasswordTextField.text, !contactNumber.isEmpty {
             let user = User(name: name,
                             username: username,
                             email: email,
                             password: password,
+                            contactNumber: contactNumber,
                             type: userType,
-                            age: nil,
+                            age: Int(age),
                             clientList: userType == .trainer ? [] : nil)
             
             UserDefaultManager.shared.trySavingUser(user: user) { success in

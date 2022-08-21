@@ -23,6 +23,7 @@ class AddClientViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.largeTitleDisplayMode = .never
+        searchBar.autocapitalizationType = .none
         addClientTableView.register(UINib.init(nibName: "ClientDetailsTableViewCell", bundle: nil),
                                     forCellReuseIdentifier: "ClientDetailsTableViewCell")
         addClientTableView.register(UINib.init(nibName: "ExerciseTableViewCell", bundle: nil),

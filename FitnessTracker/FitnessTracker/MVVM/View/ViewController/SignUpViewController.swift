@@ -65,7 +65,7 @@ class SignUpViewController: UIViewController {
            let email = emailTextField.text, !email.isEmpty,
            let password = passwordTextField.text, !password.isEmpty,
            let age = userAgeTextField.text, !age.isEmpty,
-           let contactNumber = confirmPasswordTextField.text, !contactNumber.isEmpty {
+           let contactNumber = userContactNumberTextField.text, !contactNumber.isEmpty {
             let user = User(name: name,
                             username: username,
                             email: email,

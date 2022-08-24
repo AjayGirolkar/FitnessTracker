@@ -50,6 +50,8 @@ class ClientDetailViewController: UIViewController {
     func initializeChildViewControllers() {
         let trainerStoryBoard = UIStoryboard(name: "Trainer", bundle: .main)
         let reviewVC = ReviewViewController(nibName: "ReviewViewController", bundle: nil)
+        let _  = reviewVC.view
+        reviewVC.congifureView(clientModel: clientModel)
         let toDoVC = trainerStoryBoard.instantiateViewController(identifier: "ToDoViewController",
                                                                  creator: { coder -> ToDoViewController? in
             ToDoViewController(coder: coder,

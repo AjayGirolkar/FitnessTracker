@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ExerciseDetailsViewController: UIViewController, UINavigationControllerDelegate {
     
@@ -146,21 +147,23 @@ class ExerciseDetailsViewController: UIViewController, UINavigationControllerDel
         updateEditCondition()
     }
 }
-
+//Delegate methods of UIImagePickerController to notify and send user selected image
 extension ExerciseDetailsViewController: UIImagePickerControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
     
+    //This func used to get image picked by user from gallery and show it on imageView object.
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }
-        imageView.image = image
+        imageView.image = image //Assign image to imageView so that it can show on screen
         let imageName = UUID().uuidString
         let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
         
         if let jpegData = image.jpegData(compressionQuality: 0.8) {
             try? jpegData.write(to: imagePath)
         }
-        
         dismiss(animated: true)
     }
+    
+    //func to get document directory.
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]

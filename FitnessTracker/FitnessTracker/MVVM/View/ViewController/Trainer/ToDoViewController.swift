@@ -84,12 +84,16 @@ extension ToDoViewController: ExerciseDelegate {
 
 extension ToDoViewController: ExerciseTableViewCellDelegate {
     
+    //This func is used to Delete exercise which selected by trainer.
     func deleteExercise(exercise: Exercise) {
+        //Filter higher order func to update exercise list after removing selected exercise.
         exerciseList = exerciseList?.filter{ $0.id != exercise.id}
         updateClientDetails()
     }
     
+    //This func used to update exericse list comparing with given id.
     func updateExercise(exercise: Exercise) {
+        //map func Returns an array containing the results of mapping the given closure over the sequence’s elements.
         exerciseList = exerciseList?.map({ exerciseModel in
             if exercise.id == exerciseModel.id {
                 return exercise

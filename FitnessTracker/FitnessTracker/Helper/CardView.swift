@@ -9,15 +9,15 @@ import Foundation
 
 import UIKit
 
+//This class is used to create reusable view which can modified from storyboard.
 @IBDesignable
 class CardView: UIView {
 
-    @IBInspectable var cornerRadiusValue: CGFloat = 20
-
-    @IBInspectable var shadowOffsetWidth: Int = 0
-    @IBInspectable var shadowOffsetHeight: Int = 3
-    @IBInspectable var shadowColor: UIColor? = UIColor.gray
-    @IBInspectable var shadowOpacity: Float = 0.3
+    @IBInspectable var cornerRadiusValue: CGFloat = 20  //Corner radius of view
+    @IBInspectable var shadowOffsetWidth: Int = 0 //width of shadow around view
+    @IBInspectable var shadowOffsetHeight: Int = 3 //shadow height
+    @IBInspectable var shadowColor: UIColor? = UIColor.gray //color of shadow around view
+    @IBInspectable var shadowOpacity: Float = 0.3  //opacity of shadow which decide how dark shadow should looks.
 
     override func layoutSubviews() {
         layer.cornerRadius = cornerRadiusValue

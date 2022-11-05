@@ -7,11 +7,13 @@
 
 import Foundation
 
+//Enum to distinguish user role as trainer vs client
 enum UserType: String, Codable {
     case client
     case trainer
 }
 
+//Codable model to store and retrieve client information from UserDefaults.
 struct ClientModel: Codable {
     var name: String
     var username: String = ""
@@ -21,6 +23,7 @@ struct ClientModel: Codable {
     var reviewModel: ReviewModel?
 }
 
+//Codable model to store and retrieve Exercise information from UserDefaults.
 struct Exercise: Codable {
     var id = UUID().uuidString
     var exericiseName: String

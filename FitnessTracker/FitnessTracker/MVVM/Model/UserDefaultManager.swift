@@ -11,8 +11,8 @@ class UserDefaultManager {
     
     static let shared = UserDefaultManager()
     
+    //This func check if any user is present with entered username, password and return the user if already present.
     func isValidUser(username: String, password: String) -> User? {
-        
         if let data = UserDefaults.standard.data(forKey: username) {
             do {
                 let user = try JSONDecoder().decode(User.self, from: data)
@@ -26,6 +26,7 @@ class UserDefaultManager {
         return nil
     }
     
+    //This func create new user once clicked on SignUp button. saving user in UserDefaults agains username key.
     func trySavingUser(user: User, completion: ((Bool) -> ())?) {
         do {
             let data = try JSONEncoder().encode(user)
@@ -37,6 +38,7 @@ class UserDefaultManager {
         }
     }
     
+    //This func validate if user available for given username.
     func isUserAvailable(username: String) -> User? {
         if let data = UserDefaults.standard.data(forKey: username) {
             do {

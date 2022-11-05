@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
         SharedManager.setupDefaultData()
     }
     
+    //This func used to check if user is available in database and show error if user is not present.
     func authenticateUser() -> Bool {
         if let user = UserDefaultManager.shared.isValidUser(username: usernameTextField.text ?? "", password: passwordTextField.text ?? "") {
             errorLabel.isHidden = true
@@ -32,11 +33,13 @@ class LoginViewController: UIViewController {
         return false
     }
     
-    @IBAction func singInAsUserAction(_ sender: Any) {
-        if authenticateUser() {
-            SharedManager.shared.user.type = .client
+    //This func used to sign in using User role.
+    @IBAction func signInAsUserAction(_ sender: Any) {
+        if authenticateUser() { //Validate if user is valid
+            SharedManager.shared.user.type = .client //Assign type to enum as client
             user = SharedManager.shared.user
             if let user = user {
+                //Navigate to ClientDetailViewController and assign values through constructor.
                 let trainerStoryBoard = UIStoryboard(name: "Trainer", bundle: .main)
                 let clientDetailViewController = trainerStoryBoard.instantiateViewController(identifier: "ClientDetailViewController", creator: { coder -> ClientDetailViewController? in
                     let title = "Welcome, \(user.name)"
@@ -45,16 +48,18 @@ class LoginViewController: UIViewController {
                                                       clientModel: nil,
                                                       userType: user.type)
                 })
+                //Create navigation controller to pass clientDetailViewController as rootViewController
                 let navViewController = UINavigationController(rootViewController: clientDetailViewController)
                 navViewController.modalPresentationStyle = .fullScreen
                 self.present(navViewController, animated: true, completion: nil)
             }
         }
     }
-    
-    @IBAction func singInAsTrainerAction(_ sender: Any) {
+    //This func used to sign in using Trainer role.
+    @IBAction func signInAsTrainerAction(_ sender: Any) {
         if authenticateUser() {
             SharedManager.shared.user.type = .trainer
+            //Navigate to TrainerLandingVC
             let trainerStoryBoard: UIStoryboard = UIStoryboard(name: "Trainer", bundle: nil)
             let newViewController = trainerStoryBoard.instantiateViewController(withIdentifier: "TrainerLandingVC") as! TrainerLandingVC
             let navViewController = UINavigationController(rootViewController: newViewController)

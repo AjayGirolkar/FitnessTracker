@@ -47,6 +47,8 @@ class ClientDetailViewController: UIViewController {
         self.navigationItem.title = navigationTitle
     }
     
+    
+    /// Here we are initializing ReviewViewController
     func initializeChildViewControllers() {
         let trainerStoryBoard = UIStoryboard(name: "Trainer", bundle: .main)
         let reviewVC = ReviewViewController(nibName: "ReviewViewController", bundle: nil)
@@ -70,20 +72,22 @@ class ClientDetailViewController: UIViewController {
     @IBAction func todoButtonAction(_ sender: Any) {
         addToDoViewController()
     }
-    
+    //To show toDoViewController on screen
     func addToDoViewController() {
         guard let toDoViewController = toDoViewController,
               let reviewViewController = reviewViewController else { return }
+        //Replace reviewViewController with reviewViewController
         remove(asChildViewController: reviewViewController)
         add(asChildViewController: toDoViewController)
         reviewButton.tintColor = .lightGray
         toDoButton.tintColor = UIColor(hex: "#64eb34")
         
     }
-    
+    //To show reviewViewController on screen
     @IBAction func reviewButtonAction(_ sender: Any) {
         guard let toDoViewController = toDoViewController,
               let reviewViewController = reviewViewController else { return }
+        //Replace toDoViewController with reviewViewController
         remove(asChildViewController: toDoViewController)
         add(asChildViewController: reviewViewController)
         toDoButton.tintColor = .lightGray

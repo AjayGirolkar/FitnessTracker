@@ -17,9 +17,11 @@ class ExerciseTableViewCell: UITableViewCell {
     @IBOutlet weak var onOffSegmentController: UISegmentedControl!
     @IBOutlet weak var exerciseName: UILabel!
     
-    @IBOutlet weak var repsCountLabel: UILabel!
-    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var repsCountTextField: UITextField!
+    @IBOutlet weak var weightLabelTextField: UITextField!
+    
     @IBOutlet weak var numberOfSetsLabel: UIStackView!
+    @IBOutlet weak var numberOfSetTextFields: UITextField!
     @IBOutlet weak var deleteButton: UIButton!
     var exercise: Exercise? = nil
     weak var exerciseTableViewCellDelegate: ExerciseTableViewCellDelegate?
@@ -50,8 +52,9 @@ class ExerciseTableViewCell: UITableViewCell {
         }  else {
             exerciseImageView.image = UIImage(systemName: "person.crop.circle.badge.questionmark.fill")
         }
-        repsCountLabel.text = exercise.repetition.toString()
-        weightLabel.text = exercise.weight.toString()
+        repsCountTextField.text = exercise.repetition.toString()
+        weightLabelTextField.text = exercise.weight.toString()
+        numberOfSetTextFields.text = exercise.set.toString()
         onOffSegmentController.selectedSegmentIndex = exercise.isExerciseOn ? 0 : 1
         deleteButton.isHidden = userType == .client
         onOffSegmentController.isHidden = hideOnOffSwitch

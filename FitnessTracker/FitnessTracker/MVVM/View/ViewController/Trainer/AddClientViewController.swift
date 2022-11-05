@@ -84,8 +84,9 @@ class AddClientViewController: UIViewController {
 }
 
 extension AddClientViewController: UISearchBarDelegate {
-    
+    //This func return text entered by user in SearchBar.
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        //validate if user is available
         if let user = UserDefaultManager.shared.isUserAvailable(username: searchBar.text ?? "") {
             newUserToAdd = user
             searchBar.resignFirstResponder()

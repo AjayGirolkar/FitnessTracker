@@ -33,8 +33,10 @@ class TrainerLandingVC: UIViewController {
         self.navigationController?.present(loginVC, animated: true)
     }
     
+    //This func called whenever screen is navigating from storyboard.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddClientViewControllerIdentfier" {
+            //decide if destination controller is AddClientViewController and assign delegate to it.
             if let addClientViewController = segue.destination as? AddClientViewController {
                  addClientViewController.addClientDelegate = self
             }
@@ -45,10 +47,12 @@ class TrainerLandingVC: UIViewController {
 //MARK: TableView Datasource, Delegate
 extension TrainerLandingVC: UITableViewDataSource, UITableViewDelegate {
     
+    //This function decide how many number of rows we need to present in section, which is based on number of client in this scenario.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return user.clientList?.count ?? 0
     }
     
+    //This function decide which cell and data need to present in TrainerTableViewCell in resepecting lines.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "TrainerTableViewCell", for: indexPath) as? TrainerTableViewCell else { return UITableViewCell() }
         tableViewCell.trainerLabel.text = user.clientList?[indexPath.row].name
@@ -56,7 +60,7 @@ extension TrainerLandingVC: UITableViewDataSource, UITableViewDelegate {
         return tableViewCell
     }
     
-    
+    //This function decide what action need to perform when user click on any row. here we are navigateToClientViewController.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let clientModel = user.clientList?[indexPath.row] {
             navigateToClientViewController(clientModel: clientModel)

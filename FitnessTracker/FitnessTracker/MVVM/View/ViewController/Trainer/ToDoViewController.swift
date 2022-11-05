@@ -30,9 +30,6 @@ class ToDoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if userType == .client {
-            exerciseList = exerciseList?.filter{$0.isExerciseOn == true}
-        }
         configureInitialViews()
         todoTableViewController.register(UINib.init(nibName: "ExerciseTableViewCell", bundle: nil),
                                          forCellReuseIdentifier: "ExerciseTableViewCell")

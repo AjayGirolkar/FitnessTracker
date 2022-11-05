@@ -22,6 +22,7 @@ class AddClientViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpKeyboardView()
         self.navigationItem.largeTitleDisplayMode = .never
         searchBar.autocapitalizationType = .none
         addClientTableView.register(UINib.init(nibName: "ClientDetailsTableViewCell", bundle: nil),
@@ -30,6 +31,21 @@ class AddClientViewController: UIViewController {
                                     forCellReuseIdentifier: "ExerciseTableViewCell")
         addClientTableView.register(UINib.init(nibName: "SearchUserUTableViewCell", bundle: nil),
                                     forCellReuseIdentifier: "SearchUserUTableViewCell")
+    }
+    
+    func setUpKeyboardView() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+   
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            addClientTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+        }
+    }
+
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        addClientTableView.contentInset = .zero
     }
     
     override func viewWillAppear(_ animated: Bool) {

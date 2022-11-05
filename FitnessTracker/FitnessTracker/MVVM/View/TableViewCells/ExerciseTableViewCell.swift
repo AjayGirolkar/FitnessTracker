@@ -9,12 +9,12 @@ import UIKit
 
 protocol ExerciseTableViewCellDelegate: AnyObject {
     func deleteExercise(exercise: Exercise)
+    func updateExercise(exercise: Exercise)
 }
 
 class ExerciseTableViewCell: UITableViewCell {
     
     @IBOutlet weak var exerciseImageView: UIImageView!
-    @IBOutlet weak var onOffSegmentController: UISegmentedControl!
     @IBOutlet weak var exerciseName: UILabel!
     
     @IBOutlet weak var repsCountTextField: UITextField!
@@ -42,6 +42,7 @@ class ExerciseTableViewCell: UITableViewCell {
     func configureCell(exercise: Exercise, userType: UserType, hideOnOffSwitch: Bool = false) {
         self.exercise = exercise
         exerciseName.text = exercise.exericiseName
+        addDoneButtonOnKeyboard()
         if !exercise.imageName.isEmpty,
            let url =  Bundle.main.url(forResource:  exercise.imageName, withExtension: "gif"),
            let imageData = try? Data(contentsOf: url),
@@ -55,20 +56,61 @@ class ExerciseTableViewCell: UITableViewCell {
         repsCountTextField.text = exercise.repetition.toString()
         weightLabelTextField.text = exercise.weight.toString()
         numberOfSetTextFields.text = exercise.set.toString()
-        onOffSegmentController.selectedSegmentIndex = exercise.isExerciseOn ? 0 : 1
+//        onOffSegmentController.selectedSegmentIndex = exercise.isExerciseOn ? 0 : 1
+//        onOffSegmentController.selectedSegmentTintColor = exercise.isExerciseOn ? UIColor.green : UIColor.lightGray
         deleteButton.isHidden = userType == .client
-        onOffSegmentController.isHidden = hideOnOffSwitch
+        //onOffSegmentController.isHidden = hideOnOffSwitch
     }
-    @IBAction func segmentoControllerAction(_ sender: Any) {
-        if onOffSegmentController.selectedSegmentIndex == 0 {
-            onOffSegmentController.selectedSegmentTintColor = .green
-        } else {
-            onOffSegmentController.selectedSegmentTintColor = .lightGray
-        }
-    }
+//    @IBAction func segmentoControllerAction(_ sender: Any) {
+//        if onOffSegmentController.selectedSegmentIndex == 0 {
+//            onOffSegmentController.selectedSegmentTintColor = .green
+//            exercise?.isExerciseOn = true
+//        } else {
+//            onOffSegmentController.selectedSegmentTintColor = .lightGray
+//            exercise?.isExerciseOn = false
+//        }
+//        if let exercise = exercise {
+//            exerciseTableViewCellDelegate?.updateExercise(exercise: exercise)
+//        }
+//    }
     @IBAction func deleteButtonAction(_ sender: Any) {
         if let exercise = exercise {
             exerciseTableViewCellDelegate?.deleteExercise(exercise: exercise)
         }
+    }
+    
+    @objc func addDoneButtonOnKeyboard(){
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRectMake(0, 0, 320, 50))
+       // doneToolbar.barStyle  = UIBarStyle.blackTranslucent
+
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.doneButtonAction))
+
+        doneToolbar.items = [flexSpace, done]
+        doneToolbar.sizeToFit()
+
+        self.repsCountTextField.inputAccessoryView = doneToolbar
+        self.weightLabelTextField.inputAccessoryView = doneToolbar
+        self.numberOfSetTextFields.inputAccessoryView = doneToolbar
+
+    }
+
+    @objc func doneButtonAction(){
+        if let repetition = repsCountTextField.text,
+           let value = Int(repetition){
+            exercise?.repetition = value
+        }
+        if let weight = weightLabelTextField.text,
+           let value = Int(weight)  {
+            exercise?.weight = value
+        }
+        if let set = numberOfSetTextFields.text,
+           let value = Int(set)  {
+            exercise?.set = value
+        }
+        if let exercise = exercise {
+            exerciseTableViewCellDelegate?.updateExercise(exercise: exercise)
+        }
+        
     }
 }

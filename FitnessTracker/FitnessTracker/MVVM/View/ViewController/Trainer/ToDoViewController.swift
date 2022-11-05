@@ -18,6 +18,7 @@ class ToDoViewController: UIViewController {
     
     required init?(coder: NSCoder, clientModel: ClientModel?, exerciseList: [Exercise]?, userType: UserType = .trainer) {
         self.exerciseList = exerciseList
+
         self.clientModel = clientModel
         self.userType = userType
         super.init(coder: coder)
@@ -29,6 +30,9 @@ class ToDoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if userType == .client {
+            exerciseList = exerciseList?.filter{$0.isExerciseOn == true}
+        }
         configureInitialViews()
         todoTableViewController.register(UINib.init(nibName: "ExerciseTableViewCell", bundle: nil),
                                          forCellReuseIdentifier: "ExerciseTableViewCell")

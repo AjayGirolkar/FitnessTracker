@@ -43,9 +43,10 @@ struct ReviewModel: Codable {
 
 
 struct User: Codable {
-    let name: String
-    let username: String
-    let email: String
+    var id: String = ""
+    var name: String
+    var username: String
+    var email: String
     let password: String
     var contactNumber: String = ""
     var type: UserType

@@ -75,7 +75,7 @@ class SignUpViewController: UIViewController {
                             age: Int(age),
                             clientList: userType == .trainer ? [] : nil)
             
-            UserDefaultManager.shared.trySavingUser(user: user) { success in
+            FirebaseDatabaseManager().trySavingUser(user: user) { success in
                 if success {
                     self.showAlertView(title: "Success!", message: "User is added", primaryButtonText: "Ok", primaryButtonAction:  {
                         self.dismiss(animated: true)

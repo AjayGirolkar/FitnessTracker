@@ -20,51 +20,58 @@ class LoginViewController: UIViewController {
         SharedManager.setupDefaultData()
     }
     
+    
     //This func used to check if user is available in database and show error if user is not present.
-    func authenticateUser() -> Bool {
-        if let user = UserDefaultManager.shared.isValidUser(username: usernameTextField.text ?? "", password: passwordTextField.text ?? "") {
-            errorLabel.isHidden = true
-            SharedManager.shared.user = user
-            self.user = user
-            return true
-        } else {
-            errorLabel.isHidden = false
-        }
-        return false
+    func authenticateUser(completion: @escaping (Bool) -> Void) {
+        FirebaseDatabaseManager().isValidUser(username: usernameTextField.text ?? "", password: passwordTextField.text ?? "", completion: { user in
+            if let user = user {
+                self.errorLabel.isHidden = true
+                SharedManager.shared.user = user
+                self.user = user
+                completion(true)
+            } else {
+                self.errorLabel.isHidden = false
+                completion(false)
+            }
+        })
     }
     
     //This func used to sign in using User role.
     @IBAction func signInAsUserAction(_ sender: Any) {
-        if authenticateUser() { //Validate if user is valid
-            SharedManager.shared.user.type = .client //Assign type to enum as client
-            user = SharedManager.shared.user
-            if let user = user {
-                //Navigate to ClientDetailViewController and assign values through constructor.
-                let trainerStoryBoard = UIStoryboard(name: "Trainer", bundle: .main)
-                let clientDetailViewController = trainerStoryBoard.instantiateViewController(identifier: "ClientDetailViewController", creator: { coder -> ClientDetailViewController? in
-                    let title = "Welcome, \(user.name)"
-                    return ClientDetailViewController(coder: coder, navigationTitle: title,
-                                                      exerciseList: user.excerciseList,
-                                                      clientModel: nil,
-                                                      userType: user.type)
-                })
-                //Create navigation controller to pass clientDetailViewController as rootViewController
-                let navViewController = UINavigationController(rootViewController: clientDetailViewController)
-                navViewController.modalPresentationStyle = .fullScreen
-                self.present(navViewController, animated: true, completion: nil)
+        authenticateUser(completion: { isSuccess in
+            if isSuccess { //Validate if user is valid
+                SharedManager.shared.user.type = .client //Assign type to enum as client
+                self.user = SharedManager.shared.user
+                if let user = self.user {
+                    //Navigate to ClientDetailViewController and assign values through constructor.
+                    let trainerStoryBoard = UIStoryboard(name: "Trainer", bundle: .main)
+                    let clientDetailViewController = trainerStoryBoard.instantiateViewController(identifier: "ClientDetailViewController", creator: { coder -> ClientDetailViewController? in
+                        let title = "Welcome, \(user.name)"
+                        return ClientDetailViewController(coder: coder, navigationTitle: title,
+                                                          exerciseList: user.excerciseList,
+                                                          clientModel: nil,
+                                                          userType: user.type)
+                    })
+                    //Create navigation controller to pass clientDetailViewController as rootViewController
+                    let navViewController = UINavigationController(rootViewController: clientDetailViewController)
+                    navViewController.modalPresentationStyle = .fullScreen
+                    self.present(navViewController, animated: true, completion: nil)
+                }
             }
-        }
+        })
     }
+    
     //This func used to sign in using Trainer role.
     @IBAction func signInAsTrainerAction(_ sender: Any) {
-        if authenticateUser() {
-            SharedManager.shared.user.type = .trainer
-            //Navigate to TrainerLandingVC
-            let trainerStoryBoard: UIStoryboard = UIStoryboard(name: "Trainer", bundle: nil)
-            let newViewController = trainerStoryBoard.instantiateViewController(withIdentifier: "TrainerLandingVC") as! TrainerLandingVC
-            let navViewController = UINavigationController(rootViewController: newViewController)
-            navViewController.modalPresentationStyle = .fullScreen
-            self.present(navViewController, animated: true, completion: nil)
-        }
+        authenticateUser(completion: { isSuccess in
+            if isSuccess {
+                SharedManager.shared.user.type = .trainer
+                //Navigate to TrainerLandingVC
+                let trainerStoryBoard: UIStoryboard = UIStoryboard(name: "Trainer", bundle: nil)
+                let newViewController = trainerStoryBoard.instantiateViewController(withIdentifier: "TrainerLandingVC") as! TrainerLandingVC
+                let navViewController = UINavigationController(rootViewController: newViewController)
+                navViewController.modalPresentationStyle = .fullScreen
+                self.present(navViewController, animated: true, completion: nil)
+            }})
     }
 }

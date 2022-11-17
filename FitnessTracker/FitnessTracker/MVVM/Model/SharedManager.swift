@@ -11,6 +11,7 @@ class SharedManager {
     
     static let shared = SharedManager()
     var user: User = User(name: "", username: "", email: "", password: "", type: .client, age: nil, clientList: [])
+    var totalUsers: [User] = []
     
     static func setupDefaultData() {
         
@@ -88,6 +89,7 @@ class SharedManager {
             UserDefaultManager.shared.saveExerciseList(exerciseList: exerciseList) { success in
                 print("exercise list saved successfully")
             }
+            
             return exerciseList
         }
     }

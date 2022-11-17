@@ -16,23 +16,29 @@ class FirebaseDatabaseManager {
     let database = Firestore.firestore()
     
     func isValidUser(username: String, password: String, completion: @escaping (User?) -> Void) {
-        var user: User? = nil
         let userRef = database.collection("fitnessTrackerApp").document("fitnessTrackerApp-id1").collection("Users")
         userRef.getDocuments { snapshot, error in
             if let _ = error {
                 return completion(nil)
             } else {
                 if let documents = snapshot?.documents {
+                    SharedManager.shared.totalUsers.removeAll()
                     for document in documents {
                         let response = document.data()
-                        if let usernameString = response["username"] as? String,
-                           let passwordString = response["password"] as? String,
-                           username == usernameString,
-                           password == passwordString {
-                            user = self.convertToUser(response: response)
-                            return completion(user)
+                        if let user = self.convertToUser(response: response) {
+                            SharedManager.shared.totalUsers.append(user)
                         }
                     }
+                    let availableUser = SharedManager.shared.totalUsers.filter({ userData in
+                        if userData.username == username, userData.password == password {
+                            return true
+                        }
+                        return false
+                    }).first
+                    if let user = availableUser {
+                        return completion(user)
+                    }
+
                 }
                 return completion(nil)
             }
@@ -136,5 +142,11 @@ class FirebaseDatabaseManager {
                 completion?(false)
             }
         }
+    }
+    
+    //This func validate if user available for given username.
+    func isUserAvailable(username: String) -> User? {
+        let userList = SharedManager.shared.totalUsers
+        return userList.filter{$0.username == username}.first
     }
 }

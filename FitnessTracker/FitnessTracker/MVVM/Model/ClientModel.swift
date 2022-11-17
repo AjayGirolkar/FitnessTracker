@@ -51,6 +51,7 @@ struct User: Codable {
     var contactNumber: String = ""
     var type: UserType
     let age: Int?
+    var imageName: String = ""
     var imageData: Data?
     var clientList: [ClientModel]?
     var excerciseList: [Exercise]?

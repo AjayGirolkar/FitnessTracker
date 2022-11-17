@@ -24,12 +24,13 @@ class FirebaseDatabaseManager {
             } else {
                 if let documents = snapshot?.documents {
                     for document in documents {
-                        if let userData = self.convertToUser(response: document.data()) {
-                            if userData.username == username, userData.password == password {
-                                return completion(user)
-                            } else {
-                                //return completion(nil)
-                            }
+                        let response = document.data()
+                        if let usernameString = response["username"] as? String,
+                           let passwordString = response["password"] as? String,
+                           username == usernameString,
+                           password == passwordString {
+                            user = self.convertToUser(response: response)
+                            return completion(user)
                         }
                     }
                 }
@@ -51,6 +52,7 @@ class FirebaseDatabaseManager {
         var type = ""
         var age = 0
         var id = ""
+        var imageName = ""
         if let idValue = response["id"] as? String {
             id = idValue
         }
@@ -72,21 +74,26 @@ class FirebaseDatabaseManager {
         if let ageValue = response["age"] as? Int {
             age = ageValue
         }
-        if let clientListId = response["clientListId"] as? String {
-            
+        if let clientListString = response["clientList"] as? String {
+            clientList = try? JSONDecoder().decode([ClientModel].self, from: Data(clientListString.utf8))
         }
-        if let excerciseListId = response["excerciseListId"] as? String {
-            
-        }
-        if let reviewModel = response["reviewModel"] as? String {
+        
+        if let reviewModelString = response["reviewModel"] as? String {
+            reviewModel = try? JSONDecoder().decode(ReviewModel.self, from: Data(reviewModelString.utf8))
             
         }
         if let exerciseListString = response["exerciseList"] as? String {
             excerciseList = try? JSONDecoder().decode([Exercise].self, from: Data(exerciseListString.utf8))
         }
+        if let imageNameString = response["imageName"] as? String {
+            imageName = imageNameString
+        }
+        if let typeString = response["type"] as? String {
+            type = typeString
+        }
         
         let userType = UserType(rawValue: type) ?? .client
-        user = User(name: id, username: username, email: email, password: password, type: userType, age: age, clientList: clientList, excerciseList: excerciseList, reviewModel: reviewModel)
+        user = User(id: id, name: name, username: username, email: email, password: password, contactNumber: contactNumber, type: userType, age: age, imageName: imageName, clientList: clientList, excerciseList: excerciseList, reviewModel: reviewModel)
         return user
         
     }
@@ -95,12 +102,19 @@ class FirebaseDatabaseManager {
     func trySavingUser(user: User, completion: ((Bool) -> ())?) {
         let id =  UUID().uuidString
         var exerciseListString = ""
+        var clientListString = ""
+        var reviewModelString = ""
         do {
-            if let exerciseListStringData = try? JSONEncoder().encode(SharedManager.shared.getAvailableExerciseList()) {
+            if let exerciseListStringData = try? JSONEncoder().encode(user.excerciseList) {
                 exerciseListString = String(data: exerciseListStringData, encoding: .utf8) ?? ""
             }
+            if let clientListData = try? JSONEncoder().encode(user.clientList) {
+                clientListString = String(data: clientListData, encoding: .utf8) ?? ""
+            }
+            if let reviewModelData = try? JSONEncoder().encode(user.reviewModel) {
+                reviewModelString = String(data: reviewModelData, encoding: .utf8) ?? ""
+            }
         }
-        let excerciseListString = user.excerciseList
         let userData: [String: Any] = ["id": id,
                                        "name"  : user.name,
                                        "username"  : user.username,
@@ -108,11 +122,11 @@ class FirebaseDatabaseManager {
                                        "password"  : user.password,
                                        "contactNumber"  : user.contactNumber,
                                        "type"  : user.type.rawValue,
-                                       "age"  : user.age,
-                                       "clientListId" : id,
-                                       "excerciseListId": id,
+                                       "age"  : user.age ?? 0,
+                                       "imagename": user.imageName,
+                                       "clientList" : clientListString,
                                        "exerciseList": exerciseListString,
-                                       "reviewModel": id
+                                       "reviewModel": reviewModelString
         ]
         
         database.collection("fitnessTrackerApp/fitnessTrackerApp-id1/Users").addDocument(data: userData) {error in

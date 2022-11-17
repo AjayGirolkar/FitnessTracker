@@ -90,6 +90,9 @@ extension TrainerLandingVC: AddClientDelegate {
     func updateClientModel(clientModel: ClientModel) {
         user.clientList?.append(clientModel)
         trainerTableView.reloadData()
+        FirebaseDatabaseManager().trySavingUser(user: user) { success in
+            print("success")
+        }
         UserDefaultManager.shared.trySavingUser(user: user) { success in
             print("success")
         }

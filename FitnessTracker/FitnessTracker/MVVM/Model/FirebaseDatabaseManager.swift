@@ -25,7 +25,7 @@ class FirebaseDatabaseManager {
                     SharedManager.shared.totalUsers.removeAll()
                     for document in documents {
                         let response = document.data()
-                        if let user = self.convertToUser(response: response) {
+                        if let user = self.convertToUser(response: response, id: document.documentID) {
                             SharedManager.shared.totalUsers.append(user)
                         }
                     }
@@ -38,14 +38,14 @@ class FirebaseDatabaseManager {
                     if let user = availableUser {
                         return completion(user)
                     }
-
+                    
                 }
                 return completion(nil)
             }
         }
     }
     
-    func convertToUser(response: [String : Any]) -> User? {
+    func convertToUser(response: [String : Any], id: String) -> User? {
         var user: User?
         var clientList: [ClientModel]?
         var excerciseList: [Exercise]?
@@ -57,11 +57,8 @@ class FirebaseDatabaseManager {
         var contactNumber = ""
         var type = ""
         var age = 0
-        var id = ""
         var imageName = ""
-        if let idValue = response["id"] as? String {
-            id = idValue
-        }
+        
         if let nameString = response["name"] as? String {
             name = nameString
         }
@@ -106,7 +103,7 @@ class FirebaseDatabaseManager {
     
     //This func create new user once clicked on SignUp button. saving user in UserDefaults agains username key.
     func trySavingUser(user: User, completion: ((Bool) -> ())?) {
-        let id =  UUID().uuidString
+        let id =  user.id.isEmpty ? UUID().uuidString : user.id
         var exerciseListString = ""
         var clientListString = ""
         var reviewModelString = ""
@@ -134,8 +131,7 @@ class FirebaseDatabaseManager {
                                        "exerciseList": exerciseListString,
                                        "reviewModel": reviewModelString
         ]
-        
-        database.collection("fitnessTrackerApp/fitnessTrackerApp-id1/Users").addDocument(data: userData) {error in
+        database.collection("fitnessTrackerApp/fitnessTrackerApp-id1/Users").document(id).setData(userData){error in
             if error == nil {
                 completion?(true)
             } else {
@@ -148,5 +144,34 @@ class FirebaseDatabaseManager {
     func isUserAvailable(username: String) -> User? {
         let userList = SharedManager.shared.totalUsers
         return userList.filter{$0.username == username}.first
+    }
+    
+    func getExerciseList(completion: @escaping ([Exercise]?) -> Void) {
+        var exerciseList : [Exercise]? = nil
+        let userRef = database.collection("fitnessTrackerApp").document("fitnessTrackerApp-id1")
+        userRef.getDocument { snapshot, error in
+            if error != nil {
+                completion(nil)
+            } else {
+                if let documents = snapshot?.data()?["ExerciseList"] as? String {
+                    exerciseList = try? JSONDecoder().decode([Exercise].self, from: Data(documents.utf8))
+                    completion(exerciseList)
+                }
+                completion(nil)
+            }}
+    }
+    
+    func saveExerciseList(exerciseList: [Exercise], completion: @escaping (Bool) -> ()) {
+        var exerciseListString = ""
+        if let exerciseListStringData = try? JSONEncoder().encode(exerciseList) {
+            exerciseListString = String(data: exerciseListStringData, encoding: .utf8) ?? ""
+        }
+        database.document("fitnessTrackerApp/fitnessTrackerApp-id1").setData(["ExerciseList": exerciseListString]) { error in
+            if error == nil {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
     }
 }

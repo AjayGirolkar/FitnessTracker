@@ -2,7 +2,7 @@
 //  AddClientViewController.swift
 //  FitnessTracker
 //
-//  Created by Ajay Girolkar on 18/08/22.
+//  Created by Shrey Bansal on 18/08/22.
 //
 
 import UIKit
@@ -80,10 +80,17 @@ class AddClientViewController: UIViewController {
             newUserToAdd.excerciseList = clientModel.exerciseList
             SharedManager.shared.user.clientList?.append(clientModel)
             UserDefaultManager.shared.trySavingUser(user: newUserToAdd, completion: nil)
+            self.view.activityStartAnimating(activityColor: .gray, backgroundColor: .white)
+
             UserDefaultManager.shared.trySavingUser(user: user) { success in
+                self.view.activityStopAnimating()
+
                 if success {
                     self.showAlertView(title: "Success", message: "Client added successfully", primaryButtonText: "ok", primaryButtonAction:  {
                         self.navigationController?.popViewController(animated: true)
+                    })
+                } else {
+                    self.showAlertView(title: "Failed", message: "Error to save exercise", primaryButtonText: "ok", primaryButtonAction:  {
                     })
                 }
             }

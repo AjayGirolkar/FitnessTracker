@@ -2,7 +2,7 @@
 //  FirebaseDatabaseManager.swift
 //  FitnessTracker
 //
-//  Created by Ajay Girolkar on 11/11/22.
+//  Created by Shrey Bansal on 11/11/22.
 //
 
 import Foundation
@@ -143,7 +143,7 @@ class FirebaseDatabaseManager {
     //This func validate if user available for given username.
     func isUserAvailable(username: String) -> User? {
         let userList = SharedManager.shared.totalUsers
-        return userList.filter{$0.username == username}.first
+        return userList.filter{$0.username.lowercased() == username.lowercased()}.first
     }
     
     func getExerciseList(completion: @escaping ([Exercise]?) -> Void) {

@@ -2,7 +2,7 @@
 //  UserDefaultManager.swift
 //  FitnessTracker
 //
-//  Created by Ajay Girolkar on 30/07/22.
+//  Created by Shrey Bansal on 30/07/22.
 //
 
 import Foundation
@@ -35,7 +35,7 @@ class UserDefaultManager {
         FirebaseDatabaseManager().trySavingUser(user: user) { isSuccess in
             let data = try? JSONEncoder().encode(user)
             UserDefaults.standard.set(data, forKey: user.username)
-            completion?(isSuccess)
+            completion?(true)
         }
     }
     
@@ -47,7 +47,7 @@ class UserDefaultManager {
             if let data = UserDefaults.standard.data(forKey: username) {
                 do {
                     let user = try JSONDecoder().decode(User.self, from: data)
-                    if user.username == username {
+                    if user.username.lowercased() == username.lowercased() {
                         return user
                     }
                 } catch {

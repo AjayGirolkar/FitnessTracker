@@ -2,7 +2,7 @@
 //  ClientDetailsTableViewCell.swift
 //  FitnessTracker
 //
-//  Created by Ajay Girolkar on 18/08/22.
+//  Created by Shrey Bansal on 18/08/22.
 //
 
 import UIKit

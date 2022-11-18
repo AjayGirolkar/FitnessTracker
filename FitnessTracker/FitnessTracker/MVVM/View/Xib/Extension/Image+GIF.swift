@@ -2,7 +2,7 @@
 //  Image+GIF.swift
 //  FitnessTracker
 //
-//  Created by Ajay Girolkar on 13/08/22.
+//  Created by Shrey Bansal on 13/08/22.
 //
 
 import Foundation

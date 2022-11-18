@@ -2,7 +2,7 @@
 //  SearchUserUTableViewCell.swift
 //  FitnessTracker
 //
-//  Created by Ajay Girolkar on 19/08/22.
+//  Created by Shrey Bansal on 19/08/22.
 //
 
 import UIKit

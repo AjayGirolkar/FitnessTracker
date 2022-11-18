@@ -2,7 +2,7 @@
 //  Int+Extension.swift
 //  FitnessTracker
 //
-//  Created by Ajay Girolkar on 10/08/22.
+//  Created by Shrey Bansal on 10/08/22.
 //
 
 import Foundation

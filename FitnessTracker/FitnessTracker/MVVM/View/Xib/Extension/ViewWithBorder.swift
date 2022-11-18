@@ -2,7 +2,7 @@
 //  ViewWithBorder.swift
 //  FitnessTracker
 //
-//  Created by Ajay Girolkar on 28/06/22.
+//  Created by Shrey Bansal on 28/06/22.
 //
 
 import UIKit

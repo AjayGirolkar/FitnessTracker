@@ -2,7 +2,7 @@
 //  UserLandingVC.swift
 //  FitnessTracker
 //
-//  Created by Ajay Girolkar on 30/06/22.
+//  Created by Shrey Bansal on 30/06/22.
 //
 
 import UIKit

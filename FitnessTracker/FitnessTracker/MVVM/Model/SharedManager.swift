@@ -2,7 +2,7 @@
 //  SharedManager.swift
 //  FitnessTracker
 //
-//  Created by Ajay Girolkar on 30/07/22.
+//  Created by Shrey Bansal on 30/07/22.
 //
 
 import Foundation

@@ -2,7 +2,7 @@
 //  TrainerLandingVC.swift
 //  FitnessTracker
 //
-//  Created by Ajay Girolkar on 30/06/22.
+//  Created by Shrey Bansal on 30/06/22.
 //
 
 import UIKit
@@ -93,7 +93,9 @@ extension TrainerLandingVC: AddClientDelegate {
         FirebaseDatabaseManager().trySavingUser(user: user) { success in
             print("success")
         }
+        self.view.activityStartAnimating(activityColor: .gray, backgroundColor: .white)
         UserDefaultManager.shared.trySavingUser(user: user) { success in
+            self.view.activityStopAnimating()
             print("success")
         }
     }

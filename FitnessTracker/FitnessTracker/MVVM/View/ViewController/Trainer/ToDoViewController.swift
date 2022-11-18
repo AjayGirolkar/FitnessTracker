@@ -2,7 +2,7 @@
 //  ToDoViewController.swift
 //  FitnessTracker
 //
-//  Created by Ajay Girolkar on 13/07/22.
+//  Created by Shrey Bansal on 13/07/22.
 //
 
 import UIKit
@@ -120,13 +120,21 @@ extension ToDoViewController: ExerciseTableViewCellDelegate {
                 }
                 return clientModel
             })
-            UserDefaultManager.shared.trySavingUser(user: SharedManager.shared.user, completion: nil)
+            self.view.activityStartAnimating(activityColor: .gray, backgroundColor: .white)
+
+            UserDefaultManager.shared.trySavingUser(user: SharedManager.shared.user, completion: { _ in
+                self.view.activityStopAnimating()
+
+            })
         }
     }
     func updateExerciseForClient() {
+        self.view.activityStartAnimating(activityColor: .gray, backgroundColor: .white)
+
         if var client = UserDefaultManager.shared.isUserAvailable(username: self.clientModel?.username ?? "") {
             client.excerciseList = exerciseList
             UserDefaultManager.shared.trySavingUser(user: client, completion: nil)
+            self.view.activityStopAnimating()
         }
     }
 }

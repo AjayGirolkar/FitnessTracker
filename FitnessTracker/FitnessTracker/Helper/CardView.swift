@@ -2,7 +2,7 @@
 //  CardView.swift
 //  FitnessTracker
 //
-//  Created by Ajay Girolkar on 17/08/22.
+//  Created by Shrey Bansal on 17/08/22.
 //
 
 import Foundation

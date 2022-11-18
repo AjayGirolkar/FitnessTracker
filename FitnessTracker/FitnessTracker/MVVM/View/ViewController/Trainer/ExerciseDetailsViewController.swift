@@ -2,7 +2,7 @@
 //  EditExerciseViewController.swift
 //  FitnessTracker
 //
-//  Created by Ajay Girolkar on 03/08/22.
+//  Created by Shrey Bansal on 03/08/22.
 //
 
 import UIKit
@@ -103,8 +103,10 @@ class ExerciseDetailsViewController: UIViewController, UINavigationControllerDel
                 }
                 return clientModel
             })
+            self.view.activityStartAnimating(activityColor: .gray, backgroundColor: .white)
             UserDefaultManager.shared.trySavingUser(user: SharedManager.shared.user, completion: { success in
                 if success {
+                    self.view.activityStopAnimating()
                     self.showAlertView(title: "Success", message: "Saved changes", primaryButtonText: "Ok", primaryButtonAction:  {
                         self.selectExerciseDelegate?.updateExercise(exercise: self.exercise)
                         self.navigationController?.popViewController(animated: true)
@@ -157,7 +159,7 @@ extension ExerciseDetailsViewController: UIImagePickerControllerDelegate, UIText
         let imageName = UUID().uuidString
         let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
         
-        if let jpegData = image.jpegData(compressionQuality: 0.8) {
+        if let jpegData = image.jpegData(compressionQuality: 0.2) {
             try? jpegData.write(to: imagePath)
         }
         dismiss(animated: true)

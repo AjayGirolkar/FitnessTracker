@@ -2,7 +2,7 @@
 //  ClientModel.swift
 //  FitnessTracker
 //
-//  Created by Ajay Girolkar on 11/07/22.
+//  Created by Shrey Bansal on 11/07/22.
 //
 
 import Foundation

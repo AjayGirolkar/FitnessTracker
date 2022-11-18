@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  FitnessTracker
 //
-//  Created by Ajay Girolkar on 18/06/22.
+//  Created by Shrey Bansal on 18/06/22.
 //
 
 import UIKit

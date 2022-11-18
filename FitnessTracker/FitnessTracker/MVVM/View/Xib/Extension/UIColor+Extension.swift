@@ -2,7 +2,7 @@
 //  UIColor+Extension.swift
 //  FitnessTracker
 //
-//  Created by Ajay Girolkar on 26/07/22.
+//  Created by Shrey Bansal on 26/07/22.
 //
 
 import UIKit

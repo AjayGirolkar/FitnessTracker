@@ -2,7 +2,7 @@
 //  ReviewViewController.swift
 //  FitnessTracker
 //
-//  Created by Ajay Girolkar on 13/07/22.
+//  Created by Shrey Bansal on 13/07/22.
 //
 
 import UIKit

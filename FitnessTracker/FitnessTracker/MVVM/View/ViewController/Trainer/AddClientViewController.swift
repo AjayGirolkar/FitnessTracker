@@ -76,9 +76,13 @@ class AddClientViewController: UIViewController {
             clientModel.age = newUserToAdd.age?.toString()
             clientModel.imageData = newUserToAdd.imageData
             clientModel.reviewModel = newUserToAdd.reviewModel
-            user.clientList?.append(clientModel)
+            if let _ = user.clientList {
+                user.clientList?.append(clientModel)
+            } else {
+                user.clientList = [clientModel]
+            }
             newUserToAdd.excerciseList = clientModel.exerciseList
-            SharedManager.shared.user.clientList?.append(clientModel)
+            SharedManager.shared.user = user
             UserDefaultManager.shared.trySavingUser(user: newUserToAdd, completion: nil)
             self.view.activityStartAnimating(activityColor: .gray, backgroundColor: .white)
 

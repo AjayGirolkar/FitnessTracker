@@ -139,6 +139,7 @@ class FirebaseDatabaseManager {
                                        "exerciseList": exerciseListString,
                                        "reviewModel": reviewModelString
         ]
+        //Get reference of database and save user to database
         database.collection("fitnessTrackerApp/fitnessTrackerApp-id1/Users").document(id).setData(userData){error in
             if error == nil {
                 completion?(true)

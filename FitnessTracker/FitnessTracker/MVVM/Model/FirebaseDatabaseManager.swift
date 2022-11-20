@@ -16,13 +16,17 @@ class FirebaseDatabaseManager {
     let database = Firestore.firestore()
     
     func isValidUser(username: String, password: String, completion: @escaping (User?) -> Void) {
+        //Database reference to connect to database.
         let userRef = database.collection("fitnessTrackerApp").document("fitnessTrackerApp-id1").collection("Users")
+        
+        //API call to get all data from database
         userRef.getDocuments { snapshot, error in
             if let _ = error {
                 return completion(nil)
             } else {
                 if let documents = snapshot?.documents {
                     SharedManager.shared.totalUsers.removeAll()
+                    //Get list of all items present inside database collection.
                     for document in documents {
                         let response = document.data()
                         if let user = self.convertToUser(response: response, id: document.documentID) {
@@ -30,12 +34,14 @@ class FirebaseDatabaseManager {
                         }
                     }
                     let availableUser = SharedManager.shared.totalUsers.filter({ userData in
+                        //Validate if username enter by user is available in database.
                         if userData.username == username, userData.password == password {
                             return true
                         }
                         return false
                     }).first
                     if let user = availableUser {
+                        //Return valid user if present
                         return completion(user)
                     }
                     
@@ -45,6 +51,7 @@ class FirebaseDatabaseManager {
         }
     }
     
+    //Convert database JSON response into swift codable model
     func convertToUser(response: [String : Any], id: String) -> User? {
         var user: User?
         var clientList: [ClientModel]?
@@ -96,6 +103,7 @@ class FirebaseDatabaseManager {
         }
         
         let userType = UserType(rawValue: type) ?? .client
+        //Convert to swift model.
         user = User(id: id, name: name, username: username, email: email, password: password, contactNumber: contactNumber, type: userType, age: age, imageName: imageName, clientList: clientList, excerciseList: excerciseList, reviewModel: reviewModel)
         return user
         
@@ -148,7 +156,9 @@ class FirebaseDatabaseManager {
     
     func getExerciseList(completion: @escaping ([Exercise]?) -> Void) {
         var exerciseList : [Exercise]? = nil
+        //Get exercise list path
         let userRef = database.collection("fitnessTrackerApp").document("fitnessTrackerApp-id1")
+        //API call to get exercise
         userRef.getDocument { snapshot, error in
             if error != nil {
                 completion(nil)

@@ -21,7 +21,6 @@
 		AB594BFC28ADED6200F1FD9C /* concentrationCurl.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB594BF328ADED6200F1FD9C /* concentrationCurl.gif */; };
 		AB594BFD28ADED6200F1FD9C /* dumbbellCurl.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB594BF428ADED6200F1FD9C /* dumbbellCurl.gif */; };
 		AB594BFE28ADED6200F1FD9C /* squat.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB594BF528ADED6200F1FD9C /* squat.gif */; };
-		AB594BFF28ADED6200F1FD9C /* crunches.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB594BF628ADED6200F1FD9C /* crunches.gif */; };
 		AB594C0028ADED6200F1FD9C /* latPullDown.gif in Resources */ = {isa = PBXBuildFile; fileRef = AB594BF728ADED6200F1FD9C /* latPullDown.gif */; };
 		AB594C0228ADFDA800F1FD9C /* AddClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB594C0128ADFDA800F1FD9C /* AddClientViewController.swift */; };
 		AB594C0528ADFFE500F1FD9C /* ClientDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB594C0328ADFFE500F1FD9C /* ClientDetailsTableViewCell.swift */; };
@@ -45,7 +44,6 @@
 		AB73D9E6291E7F3500AEF317 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = AB73D9E5291E7F3500AEF317 /* FirebaseFirestoreCombine-Community */; };
 		AB73D9E8291E7F3500AEF317 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AB73D9E7291E7F3500AEF317 /* FirebaseFirestoreSwift */; };
 		AB73D9EA291E7F3500AEF317 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = AB73D9E9291E7F3500AEF317 /* FirebaseStorage */; };
-		AB73D9EC291E8A0400AEF317 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB73D9EB291E8A0300AEF317 /* GoogleService-Info.plist */; };
 		AB73D9EE291E8E1900AEF317 /* FirebaseDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB73D9ED291E8E1900AEF317 /* FirebaseDatabaseManager.swift */; };
 		AB84D108286D593300D2A68A /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB84D107286D593300D2A68A /* User.storyboard */; };
 		AB84D10A286D593F00D2A68A /* Trainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB84D109286D593F00D2A68A /* Trainer.storyboard */; };
@@ -66,6 +64,7 @@
 		ABFDD42E287FCC4100407570 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDD42C287FCC4100407570 /* ExerciseTableViewCell.swift */; };
 		ABFDD42F287FCC4100407570 /* ExerciseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABFDD42D287FCC4100407570 /* ExerciseTableViewCell.xib */; };
 		ABFDD431287FCFCB00407570 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDD430287FCFCA00407570 /* Constants.swift */; };
+		E02A1A252B186E6800C32D37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E02A1A242B186E6800C32D37 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,7 +82,6 @@
 		AB594BF328ADED6200F1FD9C /* concentrationCurl.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = concentrationCurl.gif; sourceTree = "<group>"; };
 		AB594BF428ADED6200F1FD9C /* dumbbellCurl.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dumbbellCurl.gif; sourceTree = "<group>"; };
 		AB594BF528ADED6200F1FD9C /* squat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = squat.gif; sourceTree = "<group>"; };
-		AB594BF628ADED6200F1FD9C /* crunches.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = crunches.gif; path = "../../../../../../../../Downloads/Shrey's /GIF/crunches.gif"; sourceTree = "<group>"; };
 		AB594BF728ADED6200F1FD9C /* latPullDown.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = latPullDown.gif; sourceTree = "<group>"; };
 		AB594C0128ADFDA800F1FD9C /* AddClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientViewController.swift; sourceTree = "<group>"; };
 		AB594C0328ADFFE500F1FD9C /* ClientDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDetailsTableViewCell.swift; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 		AB5B7481285D8274001F7DBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB5B7483285D8274001F7DBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB5F8FF1285D8753009C4D43 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		AB73D9EB291E8A0300AEF317 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AB73D9ED291E8E1900AEF317 /* FirebaseDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseManager.swift; sourceTree = "<group>"; };
 		AB84D107286D593300D2A68A /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		AB84D109286D593F00D2A68A /* Trainer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trainer.storyboard; sourceTree = "<group>"; };
@@ -123,6 +120,7 @@
 		ABFDD42C287FCC4100407570 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		ABFDD42D287FCC4100407570 /* ExerciseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseTableViewCell.xib; sourceTree = "<group>"; };
 		ABFDD430287FCFCA00407570 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E02A1A242B186E6800C32D37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +147,6 @@
 				AB594BF728ADED6200F1FD9C /* latPullDown.gif */,
 				AB594BF428ADED6200F1FD9C /* dumbbellCurl.gif */,
 				AB594BF028ADED6200F1FD9C /* chestPress.gif */,
-				AB594BF628ADED6200F1FD9C /* crunches.gif */,
 				AB594BF328ADED6200F1FD9C /* concentrationCurl.gif */,
 				AB594BF228ADED6200F1FD9C /* floorExcerise.gif */,
 				AB594BEF28ADED6200F1FD9C /* pullUps.gif */,
@@ -251,7 +248,7 @@
 		AB5B7491285D8426001F7DBD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AB73D9EB291E8A0300AEF317 /* GoogleService-Info.plist */,
+				E02A1A242B186E6800C32D37 /* GoogleService-Info.plist */,
 				AB594BE828A7B51400F1FD9C /* GIF */,
 				AB5B747E285D8274001F7DBD /* Assets.xcassets */,
 				AB5B7483285D8274001F7DBD /* Info.plist */,
@@ -410,7 +407,6 @@
 				AB594BFD28ADED6200F1FD9C /* dumbbellCurl.gif in Resources */,
 				AB0C74B228A3733400E25C75 /* ExerciseDetailsViewController.xib in Resources */,
 				AB84D108286D593300D2A68A /* User.storyboard in Resources */,
-				AB594BFF28ADED6200F1FD9C /* crunches.gif in Resources */,
 				AB5B7482285D8274001F7DBD /* LaunchScreen.storyboard in Resources */,
 				AB594BF928ADED6200F1FD9C /* chestPress.gif in Resources */,
 				AB5B747F285D8274001F7DBD /* Assets.xcassets in Resources */,
@@ -420,7 +416,7 @@
 				AB594BF828ADED6200F1FD9C /* pullUps.gif in Resources */,
 				AB594C0C28AFD92F00F1FD9C /* SearchUserUTableViewCell.xib in Resources */,
 				AB594BFA28ADED6200F1FD9C /* pushUps.gif in Resources */,
-				AB73D9EC291E8A0400AEF317 /* GoogleService-Info.plist in Resources */,
+				E02A1A252B186E6800C32D37 /* GoogleService-Info.plist in Resources */,
 				ABFDD423287AE55300407570 /* TrainerTableViewCell.xib in Resources */,
 				AB5B747A285D8272001F7DBD /* Main.storyboard in Resources */,
 			);
